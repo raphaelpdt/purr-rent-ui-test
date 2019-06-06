@@ -17,9 +17,7 @@ export default class AccountGrid extends Component {
                         </Card.Meta>
                         </Card.Content>
                         <Card.Content extra>
-                        <a>
                             69 Points
-                        </a>
                         </Card.Content>
                     </Card>
 
@@ -29,7 +27,7 @@ export default class AccountGrid extends Component {
 
                 <Grid.Column>
                     <h2>Transactions</h2>
-                    <Item.Group relaxed>
+                    <Item.Group divided>
                     <Item>
                     <Item.Content>
                             <Item.Header as='a'>Daddy</Item.Header>

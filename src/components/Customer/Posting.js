@@ -2,10 +2,11 @@ import React from 'react';
 import {Button, Item, Icon, Label} from 'semantic-ui-react';
 import {BrowserRouter, Link} from 'react-router-dom'
 import Routes from './../../Route'
+
 const Posting = () => {
     return(
         <BrowserRouter>
-        <Item.Group relaxed>
+        <Item.Group divided>
         <Item>
         <Item.Content>
                 <Item.Header as='a'>Mike Hawk</Item.Header>

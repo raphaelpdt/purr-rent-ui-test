@@ -25,11 +25,11 @@ const panes = [
     },
 ]
 
-const Sidebar = () => {
+const CustomerView = () => {
 	return(<Tab 
     menu={{fluid: true, vertical: true, tabular: true}} 
-    panes={panes} 
+    panes={panes}
     renderActiveOnly={false}/>);
 }
 
-export default Sidebar;
+export default CustomerView;

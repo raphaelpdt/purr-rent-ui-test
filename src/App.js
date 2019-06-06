@@ -1,13 +1,22 @@
 import React, {Component} from 'react';
-import Sidebar from "./components/Customer/Sidebar";
+import {BrowserRouter, Route} from 'react-router-dom';
+
+import Home from './components/Home';
+import CustomerView from "./components/Customer/CustomerView";
+
 
 class ui_test extends Component {
 	render() {
 		return(
-			<div className="App">
-				<h1 align="center">Pur-rentals, customer test</h1>
-				<Sidebar />
-			</div>
+			<BrowserRouter>
+				<div>
+					<h1 align="center">Pur-rentals, customer test</h1>
+					<Route path="/" component={Home} exact />
+					<Route path="/customer" component={CustomerView} />
+					{/* <CustomerView />
+					<Home /> */}
+				</div>
+			</BrowserRouter>
 		);
 	}
 }
