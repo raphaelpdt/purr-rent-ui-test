@@ -26,7 +26,10 @@ const panes = [
 ]
 
 const Sidebar = () => {
-	return(<Tab menu={{fluid: true, vertical: true, tabular: true}} panes={panes} renderActiveOnly={false}/>);
+	return(<Tab 
+    menu={{fluid: true, vertical: true, tabular: true}} 
+    panes={panes} 
+    renderActiveOnly={false}/>);
 }
 
 export default Sidebar;

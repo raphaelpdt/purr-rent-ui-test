@@ -3,7 +3,7 @@ import {Button, Item, Icon, Label} from 'semantic-ui-react';
 
 const Posting = () => {
     return(
-        <Item.Group divided>
+        <Item.Group relaxed>
         <Item>
         <Item.Content>
                 <Item.Header as='a'>Mike Hawk</Item.Header>
