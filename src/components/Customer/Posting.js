@@ -1,8 +1,10 @@
 import React from 'react';
 import {Button, Item, Icon, Label} from 'semantic-ui-react';
-
+import {BrowserRouter, Link} from 'react-router-dom'
+import Routes from './../../Route'
 const Posting = () => {
     return(
+        <BrowserRouter>
         <Item.Group relaxed>
         <Item>
         <Item.Content>
@@ -12,10 +14,12 @@ const Posting = () => {
                 </Item.Description>
                 <Item.Extra>
                     <Label>Scaly</Label>
-                    <Button primary floated='left'>
+                    <Link to='/make-rental'>            
+                        <Button primary floated='left'>
                         Rent
                         <Icon name='right chevron' />
                     </Button>
+                    </Link>
                     <Button primary floated='left'>
                         Buy
                         <Icon name='right chevron' />
@@ -60,6 +64,8 @@ const Posting = () => {
             </Item.Content>
         </Item>
         </Item.Group>
+        <Routes/>
+        </BrowserRouter>
     );
 }
 
