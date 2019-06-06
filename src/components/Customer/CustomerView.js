@@ -1,6 +1,7 @@
 import React from 'react';
-import Posting from './Posting';
-import AccountGrid from './AccountGrid';
+import Posting from '../Posting';
+import AccountGrid from '../AccountGrid';
+
 import { Tab } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 

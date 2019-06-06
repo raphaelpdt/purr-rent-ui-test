@@ -3,6 +3,7 @@ import {BrowserRouter, Route} from 'react-router-dom';
 
 import Home from './components/Home';
 import CustomerView from "./components/Customer/CustomerView";
+import PurrentView from './components/Purrent/PurrentView';
 
 
 class ui_test extends Component {
@@ -10,11 +11,9 @@ class ui_test extends Component {
 		return(
 			<BrowserRouter>
 				<div>
-					<h1 align="center">Pur-rentals, customer test</h1>
 					<Route path="/" component={Home} exact />
 					<Route path="/customer" component={CustomerView} />
-					{/* <CustomerView />
-					<Home /> */}
+					<Route path="/purrent" component={PurrentView} />
 				</div>
 			</BrowserRouter>
 		);

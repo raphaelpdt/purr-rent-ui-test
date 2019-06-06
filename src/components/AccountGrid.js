@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Card, Grid, Item, Image, Button, Label, Icon} from 'semantic-ui-react';
 
-export default class AccountGrid extends Component {
+class AccountGrid extends Component {
     render() {
         return(
             <Grid columns={2} divided>
@@ -56,3 +56,5 @@ export default class AccountGrid extends Component {
         );
     }
 }
+
+export default AccountGrid;
