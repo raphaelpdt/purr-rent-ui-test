@@ -1,6 +1,7 @@
 import React from 'react';
 import Posting from '../Posting';
 import AccountGrid from '../AccountGrid';
+import {NavLink} from 'react-router-dom';
 
 import { Tab, Button } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
@@ -27,8 +28,12 @@ const panes = [
             key: 'modCustomers',
             content: ( 
             <div><Button.Group attached='bottom'>
-                    <Button>Add</Button>
-                    <Button>Remove</Button>
+                    <NavLink to='/customer-signup'>
+                        <Button fluid>Add</Button>
+                    </NavLink>
+                    <NavLink to='/customer-signup'>
+                        <Button fluid>Remove</Button>
+                    </NavLink>
                 </Button.Group>
             </div>
             ),

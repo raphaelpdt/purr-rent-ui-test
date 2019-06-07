@@ -55,7 +55,7 @@ class CustSignUp extends Component {
             <input type='number' ref='pnum' placeholder='Phone Number' />
         </Form.Field>
         <Form.Field>
-          <Checkbox label='I agree to the Terms and Conditions' />
+          <Checkbox label='I agree to the Terms and Conditions, like do I even ohmagaaaawd' />
         </Form.Field>
         <Button onClick={this.saveCustomer.bind(this)}> Submit </Button>
         {/* <Form success>

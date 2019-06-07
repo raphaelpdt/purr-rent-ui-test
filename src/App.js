@@ -6,6 +6,7 @@ import CustomerView from "./components/Customer/CustomerView";
 import PurrentView from './components/Purrent/PurrentView';
 import CustSignUp from './components/Customer/CustSignUp';
 import NewRental from './components/Customer/Transaction/newRental';
+import Login from './components/Login';
 
 
 class ui_test extends Component {
@@ -18,6 +19,7 @@ class ui_test extends Component {
 					<Route path="/customer-signup" component={CustSignUp}/>
 					<Route path="/customer-rental" component={NewRental}/>
 					<Route path="/purrent" component={PurrentView} />
+					<Route path='/login' component={Login} />
 				</div>
 			</BrowserRouter>
 		);
