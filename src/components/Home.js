@@ -21,6 +21,11 @@ const Home = () => {
 							<NavLink to='/customer'>
                                 <Button primary> Customer </Button>
                             </NavLink>
+							<Divider>
+							</Divider>
+							<NavLink to='/customer-signup'>
+								<Button color='light pink'> Click here to Sign Up</Button>
+							</NavLink>
 						</Grid.Column>
 
 						<Grid.Column>
