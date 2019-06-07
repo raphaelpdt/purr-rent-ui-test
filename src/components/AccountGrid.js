@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Card, Grid, Item, Image, Button, Label, Icon} from 'semantic-ui-react';
+import AccountCard from './AccountCard';
+import { Grid, Item, Button, Label, Icon} from 'semantic-ui-react';
 
 class AccountGrid extends Component {
     render() {
@@ -8,18 +9,7 @@ class AccountGrid extends Component {
                 <Grid.Row stretched>
                 
                 <Grid.Column>
-                    <Card>
-                    <Image src='http://dcsir.org/wp-content/uploads/2017/12/Screen-Shot-2017-12-16-at-7.43.20.png' wrapped ui={false} />
-                        <Card.Content>
-                        <Card.Header>Good Boi</Card.Header>
-                        <Card.Meta>
-                            <span>Purrfect Member since 2019</span>
-                        </Card.Meta>
-                        </Card.Content>
-                        <Card.Content extra>
-                            69 Points
-                        </Card.Content>
-                    </Card>
+                    <AccountCard />
 
                     Current Purrks: None redeemed yet
                     <Button size='medium'>Redeem Purrks!</Button>
