@@ -4,6 +4,8 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import Home from './components/Home';
 import CustomerView from "./components/Customer/CustomerView";
 import PurrentView from './components/Purrent/PurrentView';
+import CustSignUp from './components/Customer/CustSignUp';
+import NewRental from './components/Customer/Transaction/newRental';
 
 
 class ui_test extends Component {
@@ -12,7 +14,9 @@ class ui_test extends Component {
 			<BrowserRouter>
 				<div>
 					<Route path="/" component={Home} exact />
-					<Route path="/customer" component={CustomerView} />
+					<Route path="/customer" component={CustomerView} exact />
+					<Route path="/customer-signup" component={CustSignUp}/>
+					<Route path="/customer-rental" component={NewRental}/>
 					<Route path="/purrent" component={PurrentView} />
 				</div>
 			</BrowserRouter>
