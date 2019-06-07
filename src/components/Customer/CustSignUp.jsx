@@ -32,7 +32,7 @@ const CustSignUp = () => (
     <Form.Field>
       <Checkbox label='I agree to the Terms and Conditions' />
     </Form.Field>
-    <Button color='yellow' onClick={saveCustomer()}> Submit </Button>
+    <Button color='yellow' onClick={saveCustomer} Submit </Button>
     {/* <Form success>
     <Message success header='Form Completed' content="You're all signed up!" />
     
