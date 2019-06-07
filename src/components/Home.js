@@ -24,7 +24,7 @@ const Home = () => {
 							<Divider>
 							</Divider>
 							<NavLink to='/customer-signup'>
-								<Button color='light pink'> Click here to Sign Up</Button>
+								<Button color='pink'> Click here to Sign Up</Button>
 							</NavLink>
 						</Grid.Column>
 
