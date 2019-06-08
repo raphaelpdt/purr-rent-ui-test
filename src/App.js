@@ -20,6 +20,7 @@ class ui_test extends Component {
 					<Route path="/customer-rental" component={NewRental}/>
 					<Route path="/purrent" component={PurrentView} />
 					<Route path='/login' component={Login} />
+					<Route path='/new-rental' component={NewRental} />
 				</div>
 			</BrowserRouter>
 		);
