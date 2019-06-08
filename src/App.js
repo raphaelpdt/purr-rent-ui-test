@@ -7,6 +7,7 @@ import PurrentView from './components/Purrent/PurrentView';
 import CustSignUp from './components/Customer/CustSignUp';
 import NewRental from './components/Customer/Transaction/newRental';
 import Login from './components/Login';
+import NewPurchase from './components/Customer/Transaction/NewPurchase';
 
 
 class ui_test extends Component {
@@ -21,6 +22,7 @@ class ui_test extends Component {
 					<Route path="/purrent" component={PurrentView} />
 					<Route path='/login' component={Login} />
 					<Route path='/new-rental' component={NewRental} />
+					<Route path='/new-purrchase' component={NewPurchase} />
 				</div>
 			</BrowserRouter>
 		);
