@@ -27,7 +27,8 @@ const panes = [
 ]
 
 const CustomerView = () => {
-	return(<Tab 
+	return(
+    <Tab 
     menu={{fluid: true, vertical: true, tabular: true}} 
     panes={panes}
     renderActiveOnly={false}/>);

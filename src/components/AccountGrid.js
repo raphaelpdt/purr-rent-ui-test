@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import AccountCard from './AccountCard';
-import { Grid, Item, Button, Label, Icon} from 'semantic-ui-react';
+import {Link, NavLink} from 'react-router-dom';
+import { Grid, Item, Button, Label, Icon, Divider, } from 'semantic-ui-react';
 
 class AccountGrid extends Component {
     render() {
@@ -36,6 +37,13 @@ class AccountGrid extends Component {
                             <Item.Extra>
                                 <Label>Furry</Label>
                                 <Label color='blue'><Icon name='favorite'/>Rental</Label>
+                                <Link to='/customer-update'>
+                                    <Divider/>
+                                    <Button color='teal'>Update Info</Button>
+                                </Link>
+                                <Link to='/customer-invoices'>
+                                    <Button color='green'>View Invoices</Button>
+                                </Link>
                             </Item.Extra>
                         </Item.Content>
                     </Item>
