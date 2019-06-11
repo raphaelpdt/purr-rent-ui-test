@@ -6,9 +6,7 @@ export default class viewInvoices extends Component {
     
     render() {
         return(
-            <Grid columns={2}>
-                HELLO
-            </Grid>
+            <h>INVOICES FOR *THIS* CUSTOMER</h>
         )
     }
 }

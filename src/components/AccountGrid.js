@@ -13,11 +13,13 @@ class AccountGrid extends Component {
                     <AccountCard />
 
                     Current Purrks: None redeemed yet
+                    <Link to='/customer-redeempurrks'>
                     <Button size='medium'>Redeem Purrks!</Button>
+                    </Link>
                 </Grid.Column>
 
                 <Grid.Column>
-                    <h2>Transactions</h2>
+                    <h2>Recent Transactions</h2>
                     <Item.Group divided>
                     <Item>
                     <Item.Content>

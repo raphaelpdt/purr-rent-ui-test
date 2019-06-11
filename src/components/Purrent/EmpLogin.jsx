@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Form, Button, Grid, Header } from 'semantic-ui-react';
 import { Link } from "react-router-dom";
 
-export default class Login extends Component {
+export default class EmpLogin extends Component {
     
     render(){
         return(
@@ -13,11 +13,11 @@ export default class Login extends Component {
             <Grid.Row centered>
                 <Form>
                 <Form.Field>
-                <label htmlFor="custid">Enter your 3 Digit Number CustID:</label>
-                <input type='number' ref='custid' placeholder='CustID'/>
+                <label htmlFor="empid">Enter your 3 Digit Number EmpID:</label>
+                <input type='number' ref='empid' placeholder='empid'/>
                 </Form.Field>
 
-                <Link to='/customer'>
+                <Link to='/purrent'>
                 <Button> Login </Button>
                 </Link>
                 {/* <Form success>

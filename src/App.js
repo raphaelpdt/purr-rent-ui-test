@@ -10,6 +10,9 @@ import NewPurchase from './components/Customer/Transaction/NewPurchase';
 import viewInvoices from './components/Customer/Transaction/viewInvoices';
 import CustUpdate from './components/Customer/AccManagement/CustUpdate';
 import CustSignUp from './components/Customer/AccManagement/CustSignUp';
+import RedeemPurks from './components/Customer/Transaction/RedeemPurrks';
+import EmpLogin from './components/Purrent/EmpLogin';
+import AddAnimal from './components/Purrent/AnimalManagement/AddAnimal';
 
 
 class ui_test extends Component {
@@ -20,11 +23,18 @@ class ui_test extends Component {
 					<Route path="/" component={Home} exact />
 					<Route path="/customer" component={CustomerView} exact />
 					<Route path="/customer-signup" component={CustSignUp}/>
-					<Route path="/customer-rental" component={NewRental}/>
+					{/* <Route path="/customer-rental" component={NewRental}/> */}
 					<Route path='/customer-invoices' component={viewInvoices}/>
 					<Route path='/customer-update' component={CustUpdate} />
-					<Route path="/purrent" component={PurrentView} />
-					<Route path='/login' component={Login} />
+					<Route path='/customer-redeempurrks' component={RedeemPurks}/>
+
+
+					<Route path="/purrent" component={PurrentView} exact />
+					<Route path='/purrent-login' component={EmpLogin} />
+					<Route path='/customer-login' component={Login} />
+
+					<Route path='/new-animal' component={AddAnimal}/>
+
 					<Route path='/new-rental' component={NewRental} />
 					<Route path='/new-purrchase' component={NewPurchase} />
 				</div>
