@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
-import { Button, Form, Grid, Checkbox, Header, Select, Dropdown } from 'semantic-ui-react';
-import { nullableTypeAnnotation } from '@babel/types';
+import { Button, Form, Grid, Header, Dropdown } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+
+/* i don't know if it's better to query the options from our db or to include them here.
+it's much easier if we do it this way but idk if we'll get docked marks for hardcoding them
+instead of querying them from our db */
 
 const animalOptions = [
     {
@@ -17,7 +21,7 @@ const animalOptions = [
         key: 'Scaly',
         text: 'Scaly',
         value: 'scaly'
-    }       
+    }
 ]
 
 const dietOptions = [
@@ -65,89 +69,74 @@ export default class AddAnimal extends Component {
         blid: null,
         clinid: null,
         packageid: null,
-
-
-        
     }
-
-    tempState = {
-        animalid: null,
-        animaltype: null,
-        diet: null
-        
-    }
-
     handleTextChange = e => {
-        // console.log(e.target.value)
-        // console.log(e.target.name)
-        this.setState({[e.target.name]: e.target.value}, 
-            console.log(this.state))      
+        this.setState({ [e.target.name]: e.target.value }, console.log(this.state))
     }
     handleDropdownChange = (e, data) => {
-        // console.log('dd: ' + value)
-        // console.log(data)
-        // console.log(data.value)
-        this.setState({[data.name] : data.value }, console.log(this.state))
+        this.setState({ [data.name]: data.value }, console.log(this.state))
 
     }
-
     render() {
-        const {
-            value
-        } = this.state
-
+        const { value } = this.state
+        const options = new Option;
         return (
-    <Grid>
-        <Grid.Row centered>
-            <Header/>
-            <Form>
-                <Form.Field>
-                    <label htmlFor='animalid'>Enter a 3 Digit AnimalID:</label>
-                    <input 
-                        type='text' 
-                        placeholder='Animal ID' 
-                        name='animalid' 
-                        onChange={this.handleTextChange}/>
-                </Form.Field>
-                <Form.Field>
-                    <label htmlFor='animaltype'>Type of Animal:</label>
-                    <Dropdown 
-                        type='text' 
-                        placeholder='Select type of animal'
-                        name='animaltype'
-                        options={animalOptions}
-                        onChange={this.handleDropdownChange}
-                        />
-                  </Form.Field>
-                  <Form.Field>
-                     <label htmlFor='diet'> Diet:</label>
-                     <Dropdown 
-                        type='string' 
-                        placeholder='Select type of diet' 
-                        options={dietOptions} 
-                        name='diet'
-                        onChange={this.handleDropdownChange}/>
-                  </Form.Field>
-                    <Form.Field>
-                        <label>Home Fungeon: (options should be queried from db)</label>
-                        <Dropdown 
-                            placeholder='Select a fungeon location' 
-                            options={blidOptions} 
-                            name='blid'
-                            onChange={this.handleDropdownChange}/>
-                    </Form.Field>
-                   <Form.Field>
-                       <label>Clinic: (options should be queried from db)</label>
-                       <Dropdown placeholder='Select a clinic' options={null} name='clinid'/>
-                   </Form.Field>
-                   <Form.Field>
-                       <label>Care Package: (options should be queried from db)</label>
-                       <Dropdown placeholder='Select a care package' options={null} name='packageid'/>
-                   </Form.Field>
-                   <Button color='orange' onClick={this.setState(value, console.log(this.state))}> Submit </Button>
-            </Form>
-        </Grid.Row>
-    </Grid>
+            <Grid>
+                <Grid.Row centered>
+                    <Header />
+                    <Form>
+                        <Form.Field>
+                            <label htmlFor='animalid'>Enter a 3 Digit AnimalID:</label>
+                            <input
+                                type='text'
+                                placeholder='Animal ID'
+                                name='animalid'
+                                onChange={this.handleTextChange} />
+                        </Form.Field>
+                        <Form.Field>
+                            <label htmlFor='animaltype'>Type of Animal:</label>
+                            <Dropdown
+                                type='text'
+                                placeholder='Select type of animal'
+                                name='animaltype'
+                                options={this.animalOptions}
+                                onChange={this.handleDropdownChange}
+                            />
+                        </Form.Field>
+                        <Form.Field>
+                            <label htmlFor='diet'> Diet:</label>
+                            <Dropdown
+                                type='string'
+                                placeholder='Select type of diet'
+                                options={dietOptions}
+                                name='diet'
+                                onChange={this.handleDropdownChange} />
+                        </Form.Field>
+                        <Form.Field>
+                            <label>Home Fungeon: (options should be queried from db)</label>
+                            <Dropdown
+                                placeholder='Select a fungeon location'
+                                options={blidOptions}
+                                name='blid'
+                                onChange={this.handleDropdownChange} />
+                        </Form.Field>
+                        <Form.Field>
+                            <label>Clinic: (options should be queried from db)</label>
+                            <Dropdown placeholder='Select a clinic' options={null} name='clinid' />
+                        </Form.Field>
+                        <Form.Field>
+                            <label>Care Package: (options should be queried from db)</label>
+                            <Dropdown placeholder='Select a care package' options={null} name='packageid' />
+                        </Form.Field>
+                        <Link to='/purrent'>
+                            <Button color='orange' onClick={this.setState(value, () => {
+                                console.log(this.state)
+                                console.log('validate all info correct and add animal to db hehe x3')
+                            })}> Submit </Button>
+                        </Link>
+                    </Form>
+                </Grid.Row>
+            </Grid>
         );
     };
 

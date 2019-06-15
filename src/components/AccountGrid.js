@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import AccountCard from './AccountCard';
-import {Link, NavLink} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import { Grid, Item, Button, Label, Icon, Divider, } from 'semantic-ui-react';
 
 class AccountGrid extends Component {
