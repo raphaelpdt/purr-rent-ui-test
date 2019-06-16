@@ -1,9 +1,5 @@
 export default class Options {
 
-    constructor() {
-        return ([this.workerOptions, this.blidOptions, this.animalOptions])
-    }
-
     workerOptions = [
         { key: 1, text: 'Manager', value: 1 },
         { key: 2, text: 'Caretaker', value: 2 },
