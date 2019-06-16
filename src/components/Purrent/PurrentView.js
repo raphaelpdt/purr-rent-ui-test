@@ -1,10 +1,13 @@
 import React from 'react';
-import EmpPosting from './EmpPosting';
 import AccountGrid from '../AccountGrid';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { Tab, Button } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
+import TTransManagement from './HomeTabs/TTransManagement'
+import TAnimalManagement from './HomeTabs/TAnimalManagement';
+import TEmpManagement from './HomeTabs/TEmpManagement';
+import TCustManagement from './HomeTabs/TCustManagement';
 
 const panes = [
     {
@@ -12,14 +15,7 @@ const panes = [
         pane: {
             key: 'modAnimals',
             content: (
-                <div>
-                    <EmpPosting />
-                    <Button.Group attached='bottom'>
-                        <Link to='/new-animal'>
-                            <Button color='pink'>Add New Animal</Button>
-                        </Link>
-                    </Button.Group>
-                </div>
+                <TAnimalManagement />
             ),
         },
     },
@@ -28,15 +24,7 @@ const panes = [
         pane: {
             key: 'modCustomers',
             content: (
-                <div><Button.Group attached='bottom'>
-                    <NavLink to='/customer-signup'>
-                        <Button fluid>Add</Button>
-                    </NavLink>
-                    <NavLink to='/customer-signup'>
-                        <Button fluid>Remove</Button>
-                    </NavLink>
-                </Button.Group>
-                </div>
+                <TCustManagement/>
             ),
         },
     },
@@ -45,14 +33,7 @@ const panes = [
         pane: {
             key: 'modEmployee',
             content: (
-                <div><Button.Group basic attached='bottom'>
-                    <Link to='/new-purrent'>
-                        <Button>Add</Button>
-                    </Link>
-                    <Button>Remove</Button>
-
-                </Button.Group>
-                </div>
+                <TEmpManagement />
             ),
         },
     },
@@ -61,12 +42,7 @@ const panes = [
         pane: {
             key: 'modEmployee',
             content: (
-                <div>
-                    <Button.Group basic attached='bottom'>
-                        <Button>Add</Button>
-                        <Button>Remove</Button>
-                    </Button.Group>
-                </div>
+                <TTransManagement />
             ),
         },
     },

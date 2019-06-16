@@ -17,14 +17,13 @@ const EmpPosting = () => {
                 <Item.Extra>
                     <Label>Scaly</Label>
                     {/* the button/routing doesnt work on this */}
-                    <Link to='/update-animal'>            
+                    <NavLink to='/update-animal'>            
                         <Button primary floated='left'>
                         Update
                         <Icon name='right chevron' />
                     </Button>
-                    </Link>
+                    </NavLink>
                     <Button primary floated='left'>
-                        Remove
                         <Icon name='right chevron' />
                     </Button>
                 </Item.Extra>

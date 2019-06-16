@@ -15,6 +15,9 @@ import EmpLogin from './components/Purrent/EmpLogin';
 import AddAnimal from './components/Purrent/AnimalManagement/AddAnimal';
 import UpdateAnimal from './components/Purrent/AnimalManagement/UpdateAnimal';
 import AddEmp from './components/Purrent/EmpManagement/AddEmp';
+import UpdateEmp from './components/Purrent/EmpManagement/UpdateEmp';
+import DeleteEmp from './components/Purrent/EmpManagement/DeleteEmp';
+import DeleteCust from './components/Purrent/CustManagement/DeleteCust';
 
 
 class ui_test extends Component {
@@ -31,11 +34,17 @@ class ui_test extends Component {
 					<Route path='/customer-update' component={CustUpdate} />
 					<Route path='/customer-redeempurrks' component={RedeemPurks}/>
 
+					{/* PURRENT PAGES */}
 
 					<Route path="/purrent" component={PurrentView} exact />
 					<Route path='/purrent-login' component={EmpLogin} />
-
 					<Route path='/new-purrent' component={AddEmp}/>
+					<Route path='/update-purrent' component={UpdateEmp}/>
+					<Route path='/remove-purrent' component={DeleteEmp}/>
+
+					<Route path='/customer-remove' component={DeleteCust}/>
+
+					
 
 					<Route path='/new-animal' component={AddAnimal}/>
 					<Route path='/update-animal' component={UpdateAnimal}/>

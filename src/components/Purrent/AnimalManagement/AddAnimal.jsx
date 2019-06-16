@@ -79,7 +79,6 @@ export default class AddAnimal extends Component {
     }
     render() {
         const { value } = this.state
-        const options = new Option;
         return (
             <Grid>
                 <Grid.Row centered>
