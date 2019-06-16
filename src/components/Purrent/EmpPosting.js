@@ -1,9 +1,10 @@
 import React from 'react';
-import {Button, Item, Icon, Label} from 'semantic-ui-react';
-import {BrowserRouter} from 'react-router-dom'
+import {Button, Item, Icon, Label } from 'semantic-ui-react';
+import {BrowserRouter, NavLink } from 'react-router-dom'
 //import Routes from './../Route'
 
-const Posting = () => {
+const EmpPosting = () => {
+   
     return(
         <BrowserRouter>
         <Item.Group divided>
@@ -15,14 +16,14 @@ const Posting = () => {
                 </Item.Description>
                 <Item.Extra>
                     <Label>Scaly</Label>
-                    {/* <Link to='/make-rental'>             */}
+                    {/* the button/routing doesnt work on this */}
+                    <NavLink to='/update-animal'>            
                         <Button primary floated='left'>
-                        Rent
+                        Update
                         <Icon name='right chevron' />
                     </Button>
-                    {/* </Link> */}
+                    </NavLink>
                     <Button primary floated='left'>
-                        Buy
                         <Icon name='right chevron' />
                     </Button>
                 </Item.Extra>
@@ -36,11 +37,11 @@ const Posting = () => {
                 <Item.Extra>
                     <Label>Feathery uwu</Label>
                     <Button primary floated='left'>
-                        Rent
+                        Update
                         <Icon name='right chevron' />
                     </Button>
                     <Button primary floated='left'>
-                        Buy
+                        Remove
                         <Icon name='right chevron' />
                     </Button>
                 </Item.Extra>
@@ -54,11 +55,11 @@ const Posting = () => {
                 <Item.Extra>
                     <Label>Furry</Label>
                     <Button primary floated='left'>
-                        Rent
+                        Update
                         <Icon name='right chevron' />
                     </Button>
                     <Button primary floated='left'>
-                        Buy
+                        Remove
                         <Icon name='right chevron' />
                     </Button>
                 </Item.Extra>
@@ -70,4 +71,4 @@ const Posting = () => {
     );
 }
 
-export default Posting;
+export default EmpPosting;

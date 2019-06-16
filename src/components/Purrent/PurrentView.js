@@ -1,24 +1,20 @@
 import React from 'react';
-import Posting from '../Posting';
 import AccountGrid from '../AccountGrid';
-import {NavLink} from 'react-router-dom';
 
-import { Tab, Button } from 'semantic-ui-react';
+import { Tab } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
+import TTransManagement from './HomeTabs/TTransManagement'
+import TAnimalManagement from './HomeTabs/TAnimalManagement';
+import TEmpManagement from './HomeTabs/TEmpManagement';
+import TCustManagement from './HomeTabs/TCustManagement';
 
 const panes = [
     {
         menuItem: 'Manage Animals',
         pane: {
             key: 'modAnimals',
-            content: ( 
-            <div>
-                <Posting />
-                <Button.Group attached='bottom'>
-                    <Button>Add</Button>
-                    <Button>Remove</Button>
-                </Button.Group>
-            </div>
+            content: (
+                <TAnimalManagement />
             ),
         },
     },
@@ -26,29 +22,17 @@ const panes = [
         menuItem: 'Manage Customers',
         pane: {
             key: 'modCustomers',
-            content: ( 
-            <div><Button.Group attached='bottom'>
-                    <NavLink to='/customer-signup'>
-                        <Button fluid>Add</Button>
-                    </NavLink>
-                    <NavLink to='/customer-signup'>
-                        <Button fluid>Remove</Button>
-                    </NavLink>
-                </Button.Group>
-            </div>
+            content: (
+                <TCustManagement/>
             ),
         },
     },
-	{
+    {
         menuItem: 'Manage Employees',
         pane: {
             key: 'modEmployee',
-            content: ( 
-            <div><Button.Group basic attached='bottom'>
-                    <Button>Add</Button>
-                    <Button>Remove</Button>
-                </Button.Group>
-            </div>
+            content: (
+                <TEmpManagement />
             ),
         },
     },
@@ -56,32 +40,27 @@ const panes = [
         menuItem: 'Manage Transactions',
         pane: {
             key: 'modEmployee',
-            content: ( 
-            <div>
-                <Button.Group basic attached='bottom'>
-                    <Button>Add</Button>
-                    <Button>Remove</Button>
-                </Button.Group>
-            </div>
+            content: (
+                <TTransManagement />
             ),
         },
     },
-    { 
-        menuItem: 'My Account', 
+    {
+        menuItem: 'My Account',
         pane: {
-            key: 'account', 
+            key: 'account',
             content: (
-            <div><AccountGrid /></div>
+                <div><AccountGrid /></div>
             ),
         },
     },
 ]
 
 const PurrentView = () => {
-	return(<Tab 
-    menu={{fluid: true, vertical: true, tabular: true}} 
-    panes={panes}
-    renderActiveOnly={false}/>);
+    return (<Tab
+        menu={{ fluid: true, vertical: true, tabular: true }}
+        panes={panes}
+        renderActiveOnly={false} />);
 }
 
 export default PurrentView;

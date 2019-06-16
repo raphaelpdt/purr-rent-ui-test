@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import AccountCard from './AccountCard';
-import { Grid, Item, Button, Label, Icon} from 'semantic-ui-react';
+import {Link} from 'react-router-dom';
+import { Grid, Item, Button, Label, Icon, Divider, } from 'semantic-ui-react';
 
 class AccountGrid extends Component {
     render() {
@@ -12,11 +13,13 @@ class AccountGrid extends Component {
                     <AccountCard />
 
                     Current Purrks: None redeemed yet
+                    <Link to='/customer-redeempurrks'>
                     <Button size='medium'>Redeem Purrks!</Button>
+                    </Link>
                 </Grid.Column>
 
                 <Grid.Column>
-                    <h2>Transactions</h2>
+                    <h2>Recent Transactions</h2>
                     <Item.Group divided>
                     <Item>
                     <Item.Content>
@@ -36,6 +39,13 @@ class AccountGrid extends Component {
                             <Item.Extra>
                                 <Label>Furry</Label>
                                 <Label color='blue'><Icon name='favorite'/>Rental</Label>
+                                <Link to='/customer-update'>
+                                    <Divider/>
+                                    <Button color='teal'>Update Info</Button>
+                                </Link>
+                                <Link to='/customer-invoices'>
+                                    <Button color='green'>View Invoices</Button>
+                                </Link>
                             </Item.Extra>
                         </Item.Content>
                     </Item>

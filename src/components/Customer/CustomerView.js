@@ -1,5 +1,5 @@
 import React from 'react';
-import Posting from '../Posting';
+import Posting from './Posting';
 import AccountGrid from '../AccountGrid';
 
 import { Tab } from 'semantic-ui-react';
@@ -27,7 +27,8 @@ const panes = [
 ]
 
 const CustomerView = () => {
-	return(<Tab 
+	return(
+    <Tab 
     menu={{fluid: true, vertical: true, tabular: true}} 
     panes={panes}
     renderActiveOnly={false}/>);

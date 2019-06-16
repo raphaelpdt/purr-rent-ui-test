@@ -18,7 +18,7 @@ const Home = () => {
 								<Icon name='shop' />
 							</Header>
 
-							<NavLink to='/customer'>
+							<NavLink to='/customer-login'>
                                 <Button primary> Customer </Button>
                             </NavLink>
 							<Divider>
@@ -33,7 +33,7 @@ const Home = () => {
 								<Icon name='world' />
 							</Header>
 
-                            <NavLink to='/purrent'>
+                            <NavLink to='/purrent-login'>
 							    <Button primary>Purrent</Button>
                             </NavLink>
 						</Grid.Column>
