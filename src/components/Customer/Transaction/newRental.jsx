@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Button, Form, Grid, Checkbox, Header } from 'semantic-ui-react';
+import { Button, Form, Grid, Header } from 'semantic-ui-react';
+import { Link } from 'react-router-dom'
 
 class NewRental extends Component {
     render() {
@@ -28,7 +29,9 @@ class NewRental extends Component {
                        <label htmlFor="pnum">Return Date:</label>
                        <input type='number' ref='pnum' placeholder='Phone Number' />
                    </Form.Field>
+                   <Link to='/customer-thank-you'>
                    <Button> Submit </Button>
+                   </Link>
             </Form>
         </Grid.Row>
     </Grid>

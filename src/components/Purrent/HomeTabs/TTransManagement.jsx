@@ -43,10 +43,10 @@ export default class TTransManagement extends Component {
                         onChange={this.handleTextChange}/>
                 </Form.Field>
             </Form>
-                        <Button>Add</Button>
-                        <Button>Remove</Button>
-                    {/* </Button.Group>
-            </div> */}
+            //             <Button>Add</Button>
+            //             <Button>Remove</Button>
+            //         </Button.Group>
+            // </div>
                 )
             }
 }

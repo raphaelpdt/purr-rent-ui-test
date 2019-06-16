@@ -18,6 +18,7 @@ import AddEmp from './components/Purrent/EmpManagement/AddEmp';
 import UpdateEmp from './components/Purrent/EmpManagement/UpdateEmp';
 import DeleteEmp from './components/Purrent/EmpManagement/DeleteEmp';
 import DeleteCust from './components/Purrent/CustManagement/DeleteCust';
+import ThankYou from './components/Customer/Transaction/ThankYou';
 
 
 class ui_test extends Component {
@@ -29,10 +30,10 @@ class ui_test extends Component {
 					<Route path="/customer" component={CustomerView} exact />					
 					<Route path='/customer-login' component={Login} />
 					<Route path="/customer-signup" component={CustSignUp}/>
-					<Route path="/customer-rental" component={NewRental}/>
 					<Route path='/customer-invoices' component={viewInvoices}/>
 					<Route path='/customer-update' component={CustUpdate} />
 					<Route path='/customer-redeempurrks' component={RedeemPurks}/>
+					<Route path='/customer-thank-you' component={ThankYou}/>
 
 					{/* PURRENT PAGES */}
 

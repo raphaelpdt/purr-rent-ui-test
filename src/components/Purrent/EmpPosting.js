@@ -1,6 +1,6 @@
 import React from 'react';
-import {Button, Item, Icon, Label, Message} from 'semantic-ui-react';
-import {BrowserRouter, NavLink, Link} from 'react-router-dom'
+import {Button, Item, Icon, Label } from 'semantic-ui-react';
+import {BrowserRouter, NavLink } from 'react-router-dom'
 //import Routes from './../Route'
 
 const EmpPosting = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button, Item, Icon, Label} from 'semantic-ui-react';
-import {BrowserRouter} from 'react-router-dom'
+import {BrowserRouter, Link, NavLink} from 'react-router-dom'
 //import Routes from './../Route'
 
 const Posting = () => {
@@ -15,16 +15,18 @@ const Posting = () => {
                 </Item.Description>
                 <Item.Extra>
                     <Label>Scaly</Label>
-                    {/* <Link to='/make-rental'>             */}
+                    <NavLink to='/new-rental'>            
                         <Button primary floated='left'>
                         Rent
                         <Icon name='right chevron' />
                     </Button>
-                    {/* </Link> */}
+                    </NavLink>
+                    <Link to='/new-purrchase'>
                     <Button primary floated='left'>
                         Buy
                         <Icon name='right chevron' />
                     </Button>
+                    </Link>
                 </Item.Extra>
             </Item.Content>
         </Item>
@@ -53,10 +55,12 @@ const Posting = () => {
                 <Item.Description>I'm into BDSM; Beautiful Dogs Surrounding Me</Item.Description>
                 <Item.Extra>
                     <Label>Furry</Label>
+                    <Link to='/customer-rental'>
                     <Button primary floated='left'>
                         Rent
                         <Icon name='right chevron' />
                     </Button>
+                    </Link>
                     <Button primary floated='left'>
                         Buy
                         <Icon name='right chevron' />

@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
-import { Form, Button, Grid, Header } from 'semantic-ui-react';
+import { Form, Checkbox, Button, Grid, Header } from 'semantic-ui-react';
 
 
-export default class CustUpdate extends Component {
+export default class gNewCust extends Component {
 
-  updateCustomer = (event) => {
+  saveCustomer = (event) => {
     event.preventDefault();
 
     let data = {
@@ -54,8 +54,13 @@ export default class CustUpdate extends Component {
             <label htmlFor="pnum">Phone Number:</label>
             <input type='number' ref='pnum' placeholder='Phone Number' />
         </Form.Field>
-        <Button onClick={this.updateCustomer.bind(this)}> Submit </Button>
-      
+        <Form.Field>
+          <Checkbox label='I agree to the Terms and Conditions, like do I even ohmagaaaawd' />
+        </Form.Field>
+        {/* <Form success>
+        <Message success header='Form Completed' content="You're all signed up!" />
+        
+      </Form> */}
         </Form> 
         </Grid.Row>
         </Grid>

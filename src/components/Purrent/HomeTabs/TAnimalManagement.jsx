@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Button, Item, Icon, Label, Message} from 'semantic-ui-react';
+import {Button} from 'semantic-ui-react';
 import { Link } from 'react-router-dom'
 import EmpPosting from '../EmpPosting';
 

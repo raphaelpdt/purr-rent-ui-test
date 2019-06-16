@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Form, Grid, Header, Dropdown } from 'semantic-ui-react';
+import { Button, Form, Grid, Header } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 export default class DeleteCust extends Component {
