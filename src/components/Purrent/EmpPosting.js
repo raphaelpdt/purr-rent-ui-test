@@ -1,12 +1,12 @@
 import React from 'react';
 import {Button, Item, Icon, Label } from 'semantic-ui-react';
-import {BrowserRouter, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 //import Routes from './../Route'
 
 const EmpPosting = () => {
    
     return(
-        <BrowserRouter>
+        <div>
         <Item.Group divided>
         <Item>
         <Item.Content>
@@ -21,11 +21,12 @@ const EmpPosting = () => {
                         <Button primary floated='left'>
                         Update
                         <Icon name='right chevron' />
-                    </Button>
+                        </Button>
                     </NavLink>
-                    <Button primary floated='left'>
-                        <Icon name='right chevron' />
-                    </Button>
+                        <Button primary floated='left'>
+                            Remove
+                            <Icon name='right chevron' />
+                        </Button>
                 </Item.Extra>
             </Item.Content>
         </Item>
@@ -67,7 +68,7 @@ const EmpPosting = () => {
         </Item>
         </Item.Group>
         {/* <Routes/> */}
-        </BrowserRouter>
+        </div>
     );
 }
 

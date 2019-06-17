@@ -5,7 +5,7 @@ import {BrowserRouter, Link, NavLink} from 'react-router-dom'
 
 const Posting = () => {
     return(
-        <BrowserRouter>
+        <div>
         <Item.Group divided>
         <Item>
         <Item.Content>
@@ -15,18 +15,12 @@ const Posting = () => {
                 </Item.Description>
                 <Item.Extra>
                     <Label>Scaly</Label>
-                    <NavLink to='/new-rental'>            
-                        <Button primary floated='left'>
-                        Rent
-                        <Icon name='right chevron' />
-                    </Button>
-                    </NavLink>
-                    <Link to='/new-purrchase'>
-                    <Button primary floated='left'>
-                        Buy
-                        <Icon name='right chevron' />
-                    </Button>
-                    </Link>
+                        <NavLink to='/new-rental'>            
+                            <Button primary floated='left'> Rent </Button>
+                        </NavLink>
+                        <NavLink to='/new-purrchase'>
+                            <Button primary floated='left'> Buy </Button>
+                        </NavLink>
                 </Item.Extra>
             </Item.Content>
         </Item>
@@ -37,14 +31,8 @@ const Posting = () => {
                 <Item.Description>Wants a thirsty, furry little boy uwuwuwuwuwuwuwuwu</Item.Description>
                 <Item.Extra>
                     <Label>Feathery uwu</Label>
-                    <Button primary floated='left'>
-                        Rent
-                        <Icon name='right chevron' />
-                    </Button>
-                    <Button primary floated='left'>
-                        Buy
-                        <Icon name='right chevron' />
-                    </Button>
+                    <Button primary floated='left'> Rent </Button>
+                    <Button primary floated='left'> Buy </Button>
                 </Item.Extra>
             </Item.Content>
         </Item>
@@ -58,19 +46,17 @@ const Posting = () => {
                     <Link to='/customer-rental'>
                     <Button primary floated='left'>
                         Rent
-                        <Icon name='right chevron' />
                     </Button>
                     </Link>
                     <Button primary floated='left'>
                         Buy
-                        <Icon name='right chevron' />
                     </Button>
                 </Item.Extra>
             </Item.Content>
         </Item>
         </Item.Group>
         {/* <Routes/> */}
-        </BrowserRouter>
+        </div>
     );
 }
 
