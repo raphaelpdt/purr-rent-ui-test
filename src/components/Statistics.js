@@ -16,9 +16,7 @@ class Statistics extends Component {
         WorstSellerFungeon: undefined,
 
         // Due Dates
-        DueAnimalName: undefined,
-        DueAnimalType: undefined,
-        Fungeon: undefined,
+        DueDates: [],
 
         // Customer w most transactions
         BestBuyName: undefined,
@@ -28,15 +26,21 @@ class Statistics extends Component {
         // Fungeon w most transactions
         Bestgeon_Name: undefined,
         Bestgeon_Type: undefined,
-        Bestgeon_Fungeon: undefined,
+        Bestgeon_Fungeon: undefined
     }
 
     // Multiple fetch calls to get pertinent data
     // fetch best boi
+    
     // fetch least bought animal
+
     // fetch YTD sales
+
     // fetch all curr due dates
+    // create fn to map due dates to card group
+
     // fetch cust w highest transactions
+
     // fetch Fungeon w most transactions/revenue
 
     render() {
