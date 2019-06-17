@@ -59,5 +59,4 @@ const Posting = () => {
         </div>
     );
 }
-
 export default Posting;
