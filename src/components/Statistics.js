@@ -9,11 +9,13 @@ class Statistics extends Component {
         BestSellerName: undefined,
         BestSellerType: undefined,
         BestSellerFungeon: undefined,
+        BestSellerRentalCount: undefined,
 
         // Worst Boi
         WorstSellerName: undefined,
         WorstSellerType: undefined,
         WorstSellerFungeon: undefined,
+        WorstSellerRentalCount: undefined,
 
         // Due Dates
         DueDates: [],
@@ -46,7 +48,7 @@ class Statistics extends Component {
     // Create card for summary view
     createCard = (name, attr1, attr2, attr3) => {
         let card = (
-        <Card color='red'>
+        <Card>
             <Card.Content header={name} />
             <Card.Content>
                 <Card.Meta><span>{attr1}</span></Card.Meta>
@@ -59,6 +61,17 @@ class Statistics extends Component {
         </Card>)
 
         return card;
+    }
+
+    getTop5DueDates = () => {
+        let dues = this.state.DueDates;
+        let dates = [];
+
+        for(let i=0; i <= 5; i++) {
+            //dates.push(this.createCard(dues[i].name, dues[i].fungeon, dues[i].duedate, dues[i].customer));
+        }
+
+        return dates;
     }
 
     render() {
