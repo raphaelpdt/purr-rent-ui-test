@@ -7,10 +7,10 @@ export default class TCustManagement extends Component {
         return (
 
             <div><Button.Group attached='bottom'>
-                <NavLink to='/customer-signup'>
+                <NavLink to='/add-customer'>
                     <Button fluid>Add</Button>
                 </NavLink>
-                <NavLink to='/customer-remove'>
+                <NavLink to='/remove-customer'>
                     <Button fluid>Remove</Button>
                 </NavLink>
             </Button.Group>

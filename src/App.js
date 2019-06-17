@@ -5,7 +5,7 @@ import Home from './components/Home';
 import CustomerView from "./components/Customer/CustomerView";
 import PurrentView from './components/Purrent/PurrentView';
 import NewRental from './components/Customer/Transaction/NewRental';
-import Login from './components/Login';
+import Login from './components/Customer/Login';
 import NewPurchase from './components/Customer/Transaction/NewPurchase';
 import viewInvoices from './components/Customer/Transaction/viewInvoices';
 import CustUpdate from './components/Customer/AccManagement/CustUpdate';
@@ -19,6 +19,7 @@ import UpdateEmp from './components/Purrent/EmpManagement/UpdateEmp';
 import DeleteEmp from './components/Purrent/EmpManagement/DeleteEmp';
 import DeleteCust from './components/Purrent/CustManagement/DeleteCust';
 import ThankYou from './components/Customer/Transaction/ThankYou';
+import AddCust from './components/Purrent/CustManagement/AddCust';
 
 
 class ui_test extends Component {
@@ -42,8 +43,8 @@ class ui_test extends Component {
 					<Route path='/new-purrent' component={AddEmp}/>
 					<Route path='/update-purrent' component={UpdateEmp}/>
 					<Route path='/remove-purrent' component={DeleteEmp}/>
-
-					<Route path='/customer-remove' component={DeleteCust}/>
+					<Route path='/add-customer' component={AddCust}/>
+					<Route path='/remove-customer' component={DeleteCust}/>
 
 					
 
