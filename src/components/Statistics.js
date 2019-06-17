@@ -31,7 +31,7 @@ class Statistics extends Component {
 
     // Multiple fetch calls to get pertinent data
     // fetch best boi
-    
+
     // fetch least bought animal
 
     // fetch YTD sales
@@ -43,6 +43,24 @@ class Statistics extends Component {
 
     // fetch Fungeon w most transactions/revenue
 
+    // Create card for summary view
+    createCard = (name, attr1, attr2, attr3) => {
+        let card = (
+        <Card color='red'>
+            <Card.Content header={name} />
+            <Card.Content>
+                <Card.Meta><span>{attr1}</span></Card.Meta>
+                <Card.Meta><span>{attr2}</span></Card.Meta>
+            </Card.Content>
+            <Card.Content extra>
+                <Icon name='user' />
+                {attr3}
+                </Card.Content>
+        </Card>)
+
+        return card;
+    }
+
     render() {
         return(
             <Grid columns={3} divided>
@@ -50,18 +68,18 @@ class Statistics extends Component {
 
                     <Grid.Column>
                         <h3>Best Boi</h3>
-                        <StatsCard />
+                        {this.createCard('Piece of Shit', 'Furry', 'Sux cock', '69 rentals')}
 
                        <h3>Needs to be bought more Boi</h3>
-                       <StatsCard />
+                        {this.createCard('Mike Litoris', 'Feathery', 'Moist', '69 pounds')}
                     </Grid.Column>
 
                     <Grid.Column>
                         <h3>Upcoming Due Dates</h3>
                         <Card.Group>
-                            <StatsCard />
-                            <StatsCard />
-                            <StatsCard />
+                            {this.createCard('Ho Li Fuk', 'From Fungeon x', 'Due by', 'Rented by')}
+                            {this.createCard('Kyons Dildo', 'From fungeon y', 'Due by', 'Who rented me')}
+                            {this.createCard('Gag Ball', 'From my sex dungeon', 'Due by', 'Who rented this shit')}
                         </Card.Group>   
                     </Grid.Column>
 
@@ -76,10 +94,10 @@ class Statistics extends Component {
                         </div>
 
                         <h3>Greatest Sale</h3>
-                        <StatsCard />
+                        {this.createCard('Gaylord Focker', 'Amt of sale', 'Fungeon', 'idk what to put here')}
 
                         <h3>Highest Sales Fungeon</h3>
-                        <StatsCard />
+                        {this.createCard('Sum Ting Wong', 'From Fungeon x', 'Due by', 'Rented by')}
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
