@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Item, Icon, Label, Message, Form, FormField } from 'semantic-ui-react';
+import { Button, Form } from 'semantic-ui-react';
 
 export default class TTransManagement extends Component {
     state = {

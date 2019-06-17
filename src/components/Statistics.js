@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import StatsCard from "./StatsCard";
-import { Grid, Card, Segment, Header, Icon } from 'semantic-ui-react';
+import { Grid, Card, Segment, Header, Icon, Divider } from 'semantic-ui-react';
 
 class Statistics extends Component {
 
@@ -32,18 +31,39 @@ class Statistics extends Component {
     }
 
     // Multiple fetch calls to get pertinent data
-    // fetch best boi
+    // componentDidMount() {
+    //     // fetch best boi
+    //     fetch('/bestseller')
+    //         .then(res => res.json())
+    //         .then(bestseller => this.setState({ animals: bestseller.rows }))
+        
+    //     // fetch least bought animal
+    //     fetch('/worst_seller')
+    //         .then(res => res.json())
+    //         .then(worstseller => this.setState({ animals: worstseller.rows }))
 
-    // fetch least bought animal
+    //     // fetch YTD sales
+    //     fetch('/ytd_sales')
+    //         .then(res => res.json())
+    //         .then(ytd => this.setState({ animals: ytd.rows }))
 
-    // fetch YTD sales
+    //     // fetch all curr due dates
+    //     fetch('/duedates')
+    //         .then(res => res.json())
+    //         .then(duedates => this.setState({ animals: duedates.rows }))
 
-    // fetch all curr due dates
-    // create fn to map due dates to card group
+    //     // fetch cust w highest transactions
+    //     fetch('/highest_bidder')
+    //         .then(res => res.json())
+    //         .then(highestbidder => this.setState({ animals: highestbidder.rows }))
 
-    // fetch cust w highest transactions
+    //     // fetch Fungeon w most transactions/revenue
+    //     fetch('/best_fungeon')
+    //         .then(res => res.json())
+    //         .then(bestfungeon => this.setState({ animals: bestfungeon.rows }))
+    // }
 
-    // fetch Fungeon w most transactions/revenue
+    
 
     // Create card for summary view
     createCard = (name, attr1, attr2, attr3) => {
@@ -80,15 +100,15 @@ class Statistics extends Component {
                 <Grid.Row stretched>
 
                     <Grid.Column>
-                        <h3>Best Boi</h3>
+                        <h3>Best Boi</h3> <Divider />
                         {this.createCard('Piece of Shit', 'Furry', 'Sux cock', '69 rentals')}
 
-                       <h3>Needs to be bought more Boi</h3>
+                        <h3>Needs to be bought more Boi</h3> <Divider />
                         {this.createCard('Mike Litoris', 'Feathery', 'Moist', '69 pounds')}
                     </Grid.Column>
 
                     <Grid.Column>
-                        <h3>Upcoming Due Dates</h3>
+                        <h3>Upcoming Due Dates</h3> <Divider />
                         <Card.Group>
                             {this.createCard('Ho Li Fuk', 'From Fungeon x', 'Due by', 'Rented by')}
                             {this.createCard('Kyons Dildo', 'From fungeon y', 'Due by', 'Who rented me')}
@@ -106,10 +126,10 @@ class Statistics extends Component {
                         </Segment>
                         </div>
 
-                        <h3>Greatest Sale</h3>
+                        <h3>Greatest Sale</h3> <Divider />
                         {this.createCard('Gaylord Focker', 'Amt of sale', 'Fungeon', 'idk what to put here')}
 
-                        <h3>Highest Sales Fungeon</h3>
+                        <h3>Highest Sales Fungeon</h3> <Divider />
                         {this.createCard('Sum Ting Wong', 'From Fungeon x', 'Due by', 'Rented by')}
                     </Grid.Column>
                 </Grid.Row>

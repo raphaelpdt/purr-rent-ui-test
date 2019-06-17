@@ -27,7 +27,7 @@ export default class AddCust extends Component {
     // Send req to server
     // var request = new Request('http://localhost:3000/api/new-customer', {
     //   method: 'POST',
-    //   header: new Headers( { 'Content-Type': 'application/kson'}),
+    //   header: new Headers( { 'Content-Type': 'application/json'}),
     //   body: JSON.stringify(data);
     // });
 

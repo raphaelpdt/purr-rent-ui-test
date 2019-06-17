@@ -1,6 +1,6 @@
 import React from 'react';
-import {Button, Item, Icon, Label} from 'semantic-ui-react';
-import {BrowserRouter, Link, NavLink} from 'react-router-dom'
+import {Button, Item, Label} from 'semantic-ui-react';
+import { Link, NavLink} from 'react-router-dom'
 //import Routes from './../Route'
 
 const Posting = () => {
