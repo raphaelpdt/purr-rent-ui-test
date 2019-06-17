@@ -7,6 +7,7 @@ import TTransManagement from './HomeTabs/TTransManagement'
 import TAnimalManagement from './HomeTabs/TAnimalManagement';
 import TEmpManagement from './HomeTabs/TEmpManagement';
 import TCustManagement from './HomeTabs/TCustManagement';
+import Statistics from '../Statistics';
 
 const panes = [
     {
@@ -51,6 +52,15 @@ const panes = [
             key: 'account',
             content: (
                 <div><AccountGrid /></div>
+            ),
+        },
+    },
+    {
+        menuItem: 'Statistics',
+        pane: {
+            key: 'stats',
+            content: (
+                <div><Statistics /></div>
             ),
         },
     },

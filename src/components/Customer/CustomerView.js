@@ -1,6 +1,7 @@
 import React from 'react';
 import Posting from './Posting';
 import AccountGrid from '../AccountGrid';
+import Statistics from '../Statistics';
 
 import { Tab } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
@@ -21,6 +22,15 @@ const panes = [
             key: 'account', 
             content: (
             <div><AccountGrid /></div>
+            ),
+        },
+    },
+    {
+    menuItem: 'Statistics',
+        pane: {
+            key: 'stats',
+            content: (
+                <div><Statistics /></div>
             ),
         },
     },

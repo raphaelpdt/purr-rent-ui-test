@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
 
 import Home from './components/Home';
+
 import CustomerView from "./components/Customer/CustomerView";
 import PurrentView from './components/Purrent/PurrentView';
 import NewRental from './components/Customer/Transaction/NewRental';
@@ -11,6 +12,7 @@ import viewInvoices from './components/Customer/Transaction/viewInvoices';
 import CustUpdate from './components/Customer/AccManagement/CustUpdate';
 import CustSignUp from './components/Customer/AccManagement/CustSignUp';
 import RedeemPurks from './components/Customer/Transaction/RedeemPurrks';
+
 import EmpLogin from './components/Purrent/EmpLogin';
 import AddAnimal from './components/Purrent/AnimalManagement/AddAnimal';
 import UpdateAnimal from './components/Purrent/AnimalManagement/UpdateAnimal';
@@ -20,6 +22,7 @@ import DeleteEmp from './components/Purrent/EmpManagement/DeleteEmp';
 import DeleteCust from './components/Purrent/CustManagement/DeleteCust';
 import ThankYou from './components/Customer/Transaction/ThankYou';
 import AddCust from './components/Purrent/CustManagement/AddCust';
+import Statistics from './components/Statistics';
 
 
 class ui_test extends Component {
@@ -53,6 +56,7 @@ class ui_test extends Component {
 
 					<Route path='/new-rental' component={NewRental} />
 					<Route path='/new-purrchase' component={NewPurchase} />
+					<Route path='/statistics' component={Statistics} />
 				</div>
 			</BrowserRouter>
 		);
