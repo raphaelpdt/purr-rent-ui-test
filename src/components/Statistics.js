@@ -4,6 +4,33 @@ import { Grid, Card, Segment, Header, Icon } from 'semantic-ui-react';
 
 class Statistics extends Component {
 
+    state = {
+        // Best Boi
+        BestSellerName: undefined,
+        BestSellerType: undefined,
+        BestSellerFungeon: undefined,
+
+        // Worst Boi
+        WorstSellerName: undefined,
+        WorstSellerType: undefined,
+        WorstSellerFungeon: undefined,
+
+        // Due Dates
+        DueAnimalName: undefined,
+        DueAnimalType: undefined,
+        Fungeon: undefined,
+
+        // Customer w most transactions
+        BestBuyName: undefined,
+        BestBuy_Points: undefined,
+        BestBuy_Trans_Count: undefined,
+
+        // Fungeon w most transactions
+        Bestgeon_Name: undefined,
+        Bestgeon_Type: undefined,
+        Bestgeon_Fungeon: undefined,
+    }
+
     // Multiple fetch calls to get pertinent data
     // fetch best boi
     // fetch least bought animal
