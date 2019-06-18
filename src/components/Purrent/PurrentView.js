@@ -8,6 +8,9 @@ import TAnimalManagement from './HomeTabs/TAnimalManagement';
 import TEmpManagement from './HomeTabs/TEmpManagement';
 import TCustManagement from './HomeTabs/TCustManagement';
 import Statistics from '../Statistics';
+import TSpecial from './HomeTabs/TSpecial';
+import Maybe from './HomeTabs/TMaybe';
+import TTrackByPayment from './HomeTabs/TTrackByPayment';
 
 const panes = [
     {
@@ -52,6 +55,24 @@ const panes = [
             key: 'account',
             content: (
                 <div><AccountGrid /></div>
+            ),
+        },
+    },
+    {
+        menuItem: 'Search Animals Rented Between Dates',
+        pane: {
+            key: 'searchanimal',
+            content: (
+                <div><TSpecial /></div>
+            ),
+        },
+    },
+    {
+        menuItem: 'Track Customers By Payment Method',
+        pane: {
+            key: 'searchcust',
+            content: (
+                <div><TTrackByPayment /></div>
             ),
         },
     },
