@@ -2,6 +2,26 @@ import React, { Component } from "react";
 import { Grid, Form, FormField, Label, Header, FormGroup, Button, Table } from "semantic-ui-react";
 
 export default class TSpecial extends Component {
+  makeFetch(data) {
+    console.log(data);
+    var request = new Request('http://localhost:3000/rental-between-dates', {
+        method: 'GET',
+        header: new Headers({ 'Content-Type': 'application/json' }),
+        // body: JSON.stringify(data) <- no body for GET
+    });
+    fetch(request)
+        .then(response => {
+            if (response.status === 200) {
+                console.log(response)
+                return response;
+            } else {
+                throw new Error('Something went wrong on api server!');
+            }
+        }).catch(error => {
+            console.error(error);
+        });
+
+}
     state = {
         custid: null,
         start: null,
@@ -46,7 +66,7 @@ export default class TSpecial extends Component {
                             />
                             </FormField>
                         </FormGroup>
-                        <Button> Find Names </Button>
+                        <Button onClick={() => this.makeFetch(this.state)}> Find Names </Button>
                     </Form>
                     <Table celled size='small'>
     <Table.Header>

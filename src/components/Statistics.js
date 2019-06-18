@@ -2,6 +2,26 @@ import React, {Component} from 'react';
 import { Grid, Card, Segment, Header, Icon, Divider } from 'semantic-ui-react';
 
 class Statistics extends Component {
+    
+    makeFetch(data) {
+        console.log(data);
+        var request = new Request('http://localhost:3000/div-payment-method', {
+            method: 'POST',
+            header: new Headers( { 'Content-Type': 'application/json'}),
+            body: JSON.stringify(data)
+        });
+        fetch(request)
+        .then(response => {
+          if (response.status === 200) {
+            return response.json();
+          } else {
+            throw new Error('Something went wrong on api server!');
+          }
+        }).catch(error => {
+            console.error(error);
+          });
+        
+    }
 
     state = {
         // Best Boi

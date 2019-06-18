@@ -10,7 +10,7 @@ import NewPurchase from './components/Customer/Transaction/NewPurchase';
 import viewInvoices from './components/Customer/ViewInformation.jsx/viewInvoices';
 import CustUpdate from './components/Customer/AccManagement/CustUpdate';
 import CustSignUp from './components/Customer/AccManagement/CustSignUp';
-import RedeemPurks from './components/Customer/Transaction/RedeemPurrks';
+import RedeemPurks from './components/Customer/ViewInformation.jsx/RedeemPurrks';
 
 import EmpLogin from './components/Purrent/EmpLogin';
 import AddAnimal from './components/Purrent/AnimalManagement/AddAnimal';

@@ -2,6 +2,27 @@ import React, { Component } from 'react'
 import { Grid, Header, Form, FormGroup, Button, Table } from 'semantic-ui-react';
 
 export default class TTrackByPayment extends Component {
+
+  makeFetch(data) {
+    console.log(data);
+    var request = new Request('http://localhost:3000/div-payment-method', {
+        method: 'GET',
+        header: new Headers({ 'Content-Type': 'application/json' }),
+        // body: JSON.stringify(data)
+    });
+    fetch(request)
+        .then(response => {
+            if (response.status === 200) {
+                console.log(response)
+                return response;
+            } else {
+                throw new Error('Something went wrong on api server!');
+            }
+        }).catch(error => {
+            console.error(error);
+        });
+
+}
     state = {
         visa: false,
         mc: false,
@@ -68,7 +89,7 @@ export default class TTrackByPayment extends Component {
                                     onClick={this.toggleCash} />
                             </Form.Field>
                         </FormGroup>
-                        <Button> Find Customers </Button>
+                        <Button onClick={() => this.makeFetch(this.state)}> Find Customers </Button>
                     </Form>
                 </Grid.Row>
                 <Table celled>
