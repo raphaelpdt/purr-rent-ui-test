@@ -29,13 +29,13 @@ class EmpCard extends Component {
             <Card>
                 <Image src='https://66.media.tumblr.com/b8e33b75c6be626ed92b174f7b73bbc5/tumblr_pn9fbhg7Ee1qdqnr9_540.jpg' wrapped ui={false} />
                 <Card.Content>
-                    <Card.Header>{this.props.empid}</Card.Header>
+                    <Card.Header>{this.state.name}</Card.Header>
                     <Card.Meta>
-                        <span>Purrfect Member since 2019</span>
+                        <span>{this.state.type}</span>
                     </Card.Meta>
                 </Card.Content>
                 <Card.Content extra>
-                    69 Points
+                    {this.state.fungeon}
             </Card.Content>
             </Card>
         )
