@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom'
 
 export default class viewInvoices extends Component {
 
+    state = {
+        custid: this.props.location.state,
+        invoices: []
+    }
+
     componentDidMount() {
         fetch('/customer-invoices')
             .then(response => {

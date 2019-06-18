@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default class CustUpdate extends Component {
   state = {
-    custid: null,
+    custid: this.props.location.state,
     name: null,
     address: null,
     pnum: null,
@@ -70,7 +70,7 @@ export default class CustUpdate extends Component {
           <Form>
             <Form.Field>
               <label htmlFor="custid">Enter a 3 Digit Number CustID:</label>
-              <input type='number' name='custid' placeholder='CustID' />
+              <input type='number' name='custid' placeholder={this.state.custid} />
             </Form.Field>
             <Form.Field>
               <label htmlFor="name">Name:</label>

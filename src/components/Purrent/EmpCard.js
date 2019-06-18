@@ -9,7 +9,7 @@ class EmpCard extends Component {
     }
 
     componentDidMount() {
-        var request = new Request('https://localhost:3000/api/purrent/purrent', {
+        var request = new Request('https://localhost:3000/api/purrent/curr-purrent', {
             method: 'POST',
             header: new Headers({ 'Content-Type': 'application/json' }),
             body: JSON.stringify(this.props),
@@ -18,10 +18,10 @@ class EmpCard extends Component {
         fetch(request)
             .then(res => res.json())
             .then(employee => this.setState({ 
-                name: employee.name, 
-                type: employee.type,
-                fungeon: employee.fungeon
-                }))
+                name: employee.rows.name, 
+                type: employee.rows.type,
+                fungeon: employee.rows.fungeon
+            }))
     }
 
     render() {
