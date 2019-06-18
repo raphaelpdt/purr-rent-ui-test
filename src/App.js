@@ -23,6 +23,7 @@ import ThankYou from './components/Customer/Transaction/ThankYou';
 import AddCust from './components/Purrent/CustManagement/AddCust';
 import Statistics from './components/Statistics';
 import NewRental from './components/Customer/Transaction/newRental';
+import TAnimalInfo from './components/Customer/HomeTabs/TAnimalInfo';
 
 
 class ui_test extends Component {

@@ -13,8 +13,8 @@ export default class TAnimalManagement extends Component {
                             <Button color='pink'>Add New Animal</Button>
                         </Link>
                         <NavLink to='/update-animal'>            
-                        <Button primary floated='left'>
-                        Update
+                        <Button color='violet'>
+                        Update an Animal
                         </Button>
                     </NavLink>
                     </Button.Group>

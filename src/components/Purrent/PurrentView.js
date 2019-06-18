@@ -8,10 +8,13 @@ import TAnimalManagement from './HomeTabs/TAnimalManagement';
 import TEmpManagement from './HomeTabs/TEmpManagement';
 import TCustManagement from './HomeTabs/TCustManagement';
 import Statistics from '../Statistics';
+import TSpecial from './HomeTabs/TSpecial';
+import Maybe from './HomeTabs/TMaybe';
+import TTrackByPayment from './HomeTabs/TTrackByPayment';
 
 class PurrentView extends Component {
     state = {empid: this.props.location.state}
-
+    
     render() {
         return (<Tab
             menu={{ fluid: true, vertical: true, tabular: true }}
@@ -58,6 +61,24 @@ class PurrentView extends Component {
                         key: 'account',
                         content: (
                             <div><EmpAccount empid={this.state.empid}/></div>
+                        ),
+                    },
+                },
+                {
+                    menuItem: 'Search Animals Rented Between Dates',
+                    pane: {
+                        key: 'searchanimal',
+                        content: (
+                            <div><TSpecial /></div>
+                        ),
+                    },
+                },
+                {
+                    menuItem: 'Track Customers By Payment Method',
+                    pane: {
+                        key: 'searchcust',
+                        content: (
+                            <div><TTrackByPayment /></div>
                         ),
                     },
                 },
