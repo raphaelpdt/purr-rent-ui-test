@@ -23,11 +23,11 @@ class NewRental extends Component {
                   </Form.Field>
                   <Form.Field>
                        <label htmlFor="pnum">Start Date:</label>
-                       <input type='number' ref='pnum' placeholder='Phone Number' />
+                       <input type='number' ref='pnum' placeholder='Start Date' />
                    </Form.Field>
                    <Form.Field>
                        <label htmlFor="pnum">Return Date:</label>
-                       <input type='number' ref='pnum' placeholder='Phone Number' />
+                       <input type='number' ref='pnum' placeholder='Return Date' />
                    </Form.Field>
                    <Link to='/customer-thank-you'>
                    <Button> Submit </Button>

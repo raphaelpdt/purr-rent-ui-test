@@ -19,7 +19,7 @@ class NewPurchase extends Component {
     handleTextChange = e => {
         this.setState({ [e.target.name]: e.target.value })
     }
-    handleDropdownChange = (e, data) => {
+    handleDropdownChange = (data) => {
         this.setState({ [data.name]: data.value })
 
     }
@@ -36,10 +36,6 @@ class NewPurchase extends Component {
                         <Form.Field>
                             <label>AnimalID:</label>
                             <input type='text' name='animalid' placeholder='AnimalID' onChange={this.handleTextChange}/>
-                        </Form.Field>
-                        <Form.Field>
-                            <label>Rental Term:</label>
-                            <input type='text' name='rental' placeholder='Rental Term' onChange={this.handleTextChange}/>
                         </Form.Field>
                         <Form.Field>
                             <label>Microchip:</label>
