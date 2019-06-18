@@ -6,7 +6,29 @@ export default class Login extends Component {
     state = { custid: 'CustID' }
 
     getID = (e) => {
+        console.log(e.target.name)
+        console.log(e.target.value)
         this.setState({ [e.target.name]: e.target.value });
+    }
+
+    makeFetch(data) {
+        console.log(data);
+        var request = new Request('http://localhost:3000/api/customers/login', {
+            method: 'POST',
+            header: new Headers( { 'Content-Type': 'application/json'}),
+            body: JSON.stringify(data)
+        });
+        fetch(request)
+        .then(response => {
+          if (response.status === 200) {
+            return response.json();
+          } else {
+            throw new Error('Something went wrong on api server!');
+          }
+        }).catch(error => {
+            console.error(error);
+          });
+        
     }
     
     render(){
@@ -25,7 +47,7 @@ export default class Login extends Component {
                 </Form.Field>
 
                 <Link to={{pathname: '/customer', state: this.state.custid}}>
-                <Button onClick = {this.setState(value)}> Login </Button>
+                <Button onClick={() => this.makeFetch(this.state)} > Login </Button>
                 </Link>
                 {/* <Form success>
                 <Message success header='Form Completed' content="You're all signed up!" /> */}

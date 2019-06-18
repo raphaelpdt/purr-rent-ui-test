@@ -7,7 +7,7 @@ import CustomerView from "./components/Customer/CustomerView";
 import PurrentView from './components/Purrent/PurrentView';
 import Login from './components/Customer/Login';
 import NewPurchase from './components/Customer/Transaction/NewPurchase';
-import viewInvoices from './components/Customer/Transaction/viewInvoices';
+import viewInvoices from './components/Customer/ViewInformation.jsx/viewInvoices';
 import CustUpdate from './components/Customer/AccManagement/CustUpdate';
 import CustSignUp from './components/Customer/AccManagement/CustSignUp';
 import RedeemPurks from './components/Customer/Transaction/RedeemPurrks';
@@ -24,6 +24,7 @@ import AddCust from './components/Purrent/CustManagement/AddCust';
 import Statistics from './components/Statistics';
 import NewRental from './components/Customer/Transaction/newRental';
 import TAnimalInfo from './components/Customer/HomeTabs/TAnimalInfo';
+import ViewTrans from './components/Customer/ViewInformation.jsx/ViewTrans';
 
 
 class ui_test extends Component {
@@ -39,6 +40,7 @@ class ui_test extends Component {
 					<Route path='/customer-update' component={CustUpdate} />
 					<Route path='/customer-redeempurrks' component={RedeemPurks}/>
 					<Route path='/customer-thank-you' component={ThankYou}/>
+					<Route path='/customer-transactions' component={ViewTrans}/>
 
 					{/* PURRENT PAGES */}
 

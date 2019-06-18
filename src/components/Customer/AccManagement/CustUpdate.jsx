@@ -13,6 +13,27 @@ export default class CustUpdate extends Component {
     this.setState({ [e.target.name]: e.target.value })
   }
 
+  makeFetch(data) {
+    console.log(data);
+    var request = new Request('http://localhost:3000/api/customers/update', {
+        method: 'POST',
+        header: new Headers({ 'Content-Type': 'application/json' }),
+        body: JSON.stringify(data)
+    });
+    fetch(request)
+        .then(response => {
+            if (response.status === 200) {
+                console.log(response)
+                return response.json();
+            } else {
+                throw new Error('Something went wrong on api server!');
+            }
+        }).catch(error => {
+            console.error(error);
+        });
+
+}
+
   // updateCustomer = (event) => {
   //   event.preventDefault();
 
@@ -66,6 +87,7 @@ export default class CustUpdate extends Component {
             <Link to='/customer'>
               <Button onClick={() => {
                 console.log('validate customer table contain custid and then update')
+                this.makeFetch(this.state)
               }}>
                 Update </Button>
             </Link>

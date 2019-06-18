@@ -25,6 +25,25 @@ class NewRental extends Component {
         this.setState({ [data.name]: data.value })
 
     }
+    makeFetch(data) {
+        console.log(data);
+        var request = new Request('http://localhost:3000/api/customers/new-rental', {
+            method: 'PUT',
+            header: new Headers( { 'Content-Type': 'application/json'}),
+            body: JSON.stringify(data)
+        });
+        fetch(request)
+        .then(response => {
+          if (response.status === 200) {
+            return response.json();
+          } else {
+            throw new Error('Something went wrong on api server!');
+          }
+        }).catch(error => {
+            console.error(error);
+          });
+        
+    }
     
     render() {     
         return (
@@ -60,6 +79,7 @@ class NewRental extends Component {
                             <Button onClick={() => {
                                 console.log(this.state)
                                 console.log('validate animalid and custid exists, add to transaction and rental tables')
+                                this.makeFetch(this.state)
                             }}> Submit </Button>
                         </Link>
                     </Form>

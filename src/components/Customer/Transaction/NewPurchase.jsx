@@ -28,6 +28,25 @@ class NewPurchase extends Component {
     }
     handleDropdownChange = (data) => {
         this.setState({ [data.name]: data.value })
+    }
+    makeFetch(data) {
+        console.log(data);
+        var request = new Request('http://localhost:3000/api/customers/new-purrchase', {
+            method: 'PUT',
+            header: new Headers({ 'Content-Type': 'application/json' }),
+            body: JSON.stringify(data)
+        });
+        fetch(request)
+            .then(response => {
+                if (response.status === 200) {
+                    console.log(response)
+                    return response.json();
+                } else {
+                    throw new Error('Something went wrong on api server!');
+                }
+            }).catch(error => {
+                console.error(error);
+            });
 
     }
     render() {
@@ -71,7 +90,8 @@ class NewPurchase extends Component {
                         <Link to='/customer-thank-you'>
                             <Button onClick={() => {
                                 console.log(this.state)
-                                console.log('validate animalid and custid exists, add to transaction and purchase tables'
+                                console.log('validate animalid and custid exists, add to transaction and purchase tables')
+                                this.makeFetch(this.state)
                                 /* 
                                 ~do request call ~
                                     if error response (
@@ -80,7 +100,6 @@ class NewPurchase extends Component {
                                     navigate to /customer-thank-you
                                 )
                             */
-                                )
                             }}> Submit </Button>
                         </Link>
                     </Form>

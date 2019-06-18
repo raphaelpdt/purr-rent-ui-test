@@ -13,6 +13,31 @@ class CustSignUp extends Component {
   handleTextChange = e => {
     this.setState({ [e.target.name]: e.target.value })
   }
+
+  makeFetch(data) {
+    // console.log('this is from a method')
+    console.log(data);
+    var request = new Request('http://localhost:3000/api/customers/add', {
+      method: 'POST',
+      header: new Headers({ 'Content-Type': 'application/json' }),
+      body: JSON.stringify(data)
+    });
+    fetch(request)
+      .then(response => {
+        if (response.status === 200) {
+          return response.json();
+        } else {
+          throw new Error('Something went wrong on api server!');
+        }
+      })
+    // .then(response => {
+    //   console.debug(response);
+    //   // ...
+    .catch(error => {
+      console.error(error);
+    });
+
+  }
   // saveCustomer = (event) => {
   //   event.preventDefault();
 
@@ -69,6 +94,7 @@ class CustSignUp extends Component {
             <Link to='/customer-login'>
               <Button onClick={() => {
                 console.log('validate customer table dont contain custid and then add')
+                this.makeFetch(this.state);
               }
               }> Submit </Button>
             </Link>

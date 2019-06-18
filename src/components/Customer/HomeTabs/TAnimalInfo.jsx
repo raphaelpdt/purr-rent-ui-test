@@ -3,14 +3,32 @@ import { Grid, Input, Form, Label, Button, Radio, FormGroup, Table, Icon, Menu, 
 import { BrowserRouter, Link } from "react-router-dom";
 
 export default class TAnimalInfo extends Component {
-    // state = {package: false}
     state = {
         package: false,
         diet: false,
         animaltype: false,
     }
 
-
+    makeFetch(data) {
+        console.log(data);
+        var request = new Request('http://localhost:3000/api/customers/misc-animal-info', {
+            method: 'POST',
+            header: new Headers({ 'Content-Type': 'application/json' }),
+            body: JSON.stringify(data)
+        });
+        fetch(request)
+            .then(response => {
+                if (response.status === 200) {
+                    console.log(response)
+                    return response.json();
+                } else {
+                    throw new Error('Something went wrong on api server!');
+                }
+            }).catch(error => {
+                console.error(error);
+            });
+    
+    }
     togglePackage = (e) => {
         console.log(this.state)
         this.setState(prevState => ({ package: !prevState.package }))
@@ -59,7 +77,7 @@ export default class TAnimalInfo extends Component {
                                     onClick={this.toggleAnimal} />
                             </Form.Field>
                         </FormGroup>
-                        <Button color='olive'> Project Info Selected </Button>
+                        <Button color='olive' onClick={() => this.makeFetch(this.state)}> Project Info Selected </Button>
                     </Form>
                     <Table celled>
                         <Table.Header>
