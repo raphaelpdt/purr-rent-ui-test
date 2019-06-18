@@ -1,9 +1,12 @@
-import React from 'react';
-import {Button, Item, Label} from 'semantic-ui-react';
+import React, {Component} from 'react';
+import {Button, Item, Label, Icon} from 'semantic-ui-react';
 import { Link, NavLink} from 'react-router-dom'
 //import Routes from './../Route'
 
-const Posting = () => {
+class Posting extends Component {
+    state = {custid: this.props.custid}
+
+    render() {
     return(
         <div>
         <Item.Group divided>
@@ -15,11 +18,11 @@ const Posting = () => {
                 </Item.Description>
                 <Item.Extra>
                     <Label>Scaly</Label>
-                        <NavLink to='/new-rental'>            
-                            <Button primary floated='left'> Rent </Button>
+                        <NavLink to={{pathname: '/new-rental', state: this.state.custid}}>            
+                            <Button primary floated='left'> Rent <Icon name='right chevron' /></Button>
                         </NavLink>
-                        <NavLink to='/new-purrchase'>
-                            <Button primary floated='left'> Buy </Button>
+                            <NavLink to={{ pathname: '/new-purrchase', state: this.state.custid }}>
+                            <Button primary floated='left'> Buy <Icon name='right chevron' /></Button>
                         </NavLink>
                 </Item.Extra>
             </Item.Content>
@@ -57,6 +60,7 @@ const Posting = () => {
         </Item.Group>
         {/* <Routes/> */}
         </div>
-    );
+        );
+    }
 }
 export default Posting;

@@ -49,7 +49,7 @@ class CustomerView extends Component {
             pane: {
                 key: 'animals',
                 content: ( 
-                <div><Posting /></div>
+                <div><Posting custid={this.state.custid}/></div>
                 ),
             },
         },

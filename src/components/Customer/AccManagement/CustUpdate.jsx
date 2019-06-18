@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import { Form, Button, Grid, Header } from 'semantic-ui-react';
 import { Link } from "react-router-dom";
 
@@ -24,54 +24,54 @@ export default class CustUpdate extends Component {
   //   }
   //   console.log(data);
 
-    // Send req to server
-    // var request = new Request('http://localhost:3000/api/new-customer', {
-    //   method: 'POST',
-    //   header: new Headers( { 'Content-Type': 'application/kson'}),
-    //   body: JSON.stringify(data);
-    // });
+  //   Send req to server
+  //   var request = new Request('http://localhost:3000/api/new-customer', {
+  //     method: 'POST',
+  //     header: new Headers({ 'Content-Type': 'application/json' }),
+  //     body: JSON.stringify(data);
+  //   });
 
-    // fetch(request)
-    // .then(function(response) {
-    //   response.json().then(function(data) {
-    //     console.log(data);
-    //   })
-    // });
+  //   fetch(request)
+  //     .then(function (response) {
+  //       response.json().then(function (data) {
+  //         console.log(data);
+  //       })
+  //     });
   // };
 
   render() {
-    return(
-        <Grid>
-            <Header>
+    return (
+      <Grid>
+        <Header>
 
-            </Header>
+        </Header>
         <Grid.Row centered>
-        <Form>
-        <Form.Field>
-        <label htmlFor="custid">Enter a 3 Digit Number CustID:</label>
-        <input type='number' name='custid' placeholder='CustID'/>
-        </Form.Field>
-        <Form.Field>
-        <label htmlFor="name">Name:</label>
-          <input type='text' name='name' placeholder='Name'/>
-        </Form.Field>
-        <Form.Field>
-            <label htmlFor="address">Address:</label>
-            <input type='text' name='address' placeholder='Address'/>
-        </Form.Field>
-        <Form.Field>
-            <label htmlFor="pnum">Phone Number:</label>
-            <input type='number' name='pnum' placeholder='Phone Number' />
-        </Form.Field>
-        <Link to='/customer'>
+          <Form>
+            <Form.Field>
+              <label htmlFor="custid">Enter a 3 Digit Number CustID:</label>
+              <input type='number' name='custid' placeholder='CustID' />
+            </Form.Field>
+            <Form.Field>
+              <label htmlFor="name">Name:</label>
+              <input type='text' name='name' placeholder='Name' />
+            </Form.Field>
+            <Form.Field>
+              <label htmlFor="address">Address:</label>
+              <input type='text' name='address' placeholder='Address' />
+            </Form.Field>
+            <Form.Field>
+              <label htmlFor="pnum">Phone Number:</label>
+              <input type='number' name='pnum' placeholder='Phone Number' />
+            </Form.Field>
+            <Link to='/customer'>
               <Button onClick={() => {
                 console.log('validate customer table contain custid and then update')
               }}>
-                 Update </Button>
-            </Link>      
-        </Form> 
+                Update </Button>
+            </Link>
+          </Form>
         </Grid.Row>
-        </Grid>
+      </Grid>
     );
   };
 }

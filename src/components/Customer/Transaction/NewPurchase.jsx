@@ -31,7 +31,7 @@ class NewPurchase extends Component {
                     <Form>
                         <Form.Field>
                             <label>CustID:</label>
-                            <input placeholder='CustID' name='custid' onChange={this.handleTextChange} />
+                            <input placeholder={this.props.location.state} name='custid' onChange={this.handleTextChange} />
                         </Form.Field>
                         <Form.Field>
                             <label>AnimalID:</label>

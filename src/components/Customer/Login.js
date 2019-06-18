@@ -25,7 +25,7 @@ export default class Login extends Component {
                 </Form.Field>
 
                 <Link to={{pathname: '/customer', state: this.state.custid}}>
-                <Button onClick = {this.setState(value, () =>{console.log(this.state.custid)})}> Login </Button>
+                <Button onClick = {this.setState(value)}> Login </Button>
                 </Link>
                 {/* <Form success>
                 <Message success header='Form Completed' content="You're all signed up!" /> */}
