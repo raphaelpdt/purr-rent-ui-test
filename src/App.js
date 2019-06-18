@@ -22,7 +22,7 @@ import DeleteCust from './components/Purrent/CustManagement/DeleteCust';
 import ThankYou from './components/Customer/Transaction/ThankYou';
 import AddCust from './components/Purrent/CustManagement/AddCust';
 import Statistics from './components/Statistics';
-import NewRental from './components/Customer/Transaction/NewRental';
+import NewRental from './components/Customer/Transaction/newRental';
 
 
 class ui_test extends Component {
@@ -48,8 +48,6 @@ class ui_test extends Component {
 					<Route path='/remove-purrent' component={DeleteEmp}/>
 					<Route path='/add-customer' component={AddCust}/>
 					<Route path='/remove-customer' component={DeleteCust}/>
-
-					
 
 					<Route path='/new-animal' component={AddAnimal}/>
 					<Route path='/update-animal' component={UpdateAnimal}/>
