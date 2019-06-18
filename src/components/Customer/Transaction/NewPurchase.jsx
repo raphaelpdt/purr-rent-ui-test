@@ -17,6 +17,7 @@ class NewPurchase extends Component {
     state = {
         custid: null,
         animalid: null,
+        date: null,
         mchip: 0,
         insurance: 0,
         paymethod: null,
@@ -41,14 +42,8 @@ class NewPurchase extends Component {
                         </Form.Field>
                         <Form.Field>
                             <label>AnimalID:</label>
-<<<<<<< HEAD
                             <input type='text' name='animalid' placeholder='AnimalID' onChange={this.handleTextChange} />
                         </Form.Field>
-
-=======
-                            <input type='text' name='animalid' placeholder='AnimalID' onChange={this.handleTextChange}/>
-                        </Form.Field>
->>>>>>> 6897580ea924559bb6b6f09f63658b1876154fbb
                         <Form.Field>
                             <label>Microchip:</label>
                             <Dropdown
@@ -76,7 +71,16 @@ class NewPurchase extends Component {
                         <Link to='/customer-thank-you'>
                             <Button onClick={() => {
                                 console.log(this.state)
-                                console.log('validate animalid and custid exists, add to transaction and purchase tables')
+                                console.log('validate animalid and custid exists, add to transaction and purchase tables'
+                                /* 
+                                ~do request call ~
+                                    if error response (
+                                        display error
+                                    ) else (
+                                    navigate to /customer-thank-you
+                                )
+                            */
+                                )
                             }}> Submit </Button>
                         </Link>
                     </Form>

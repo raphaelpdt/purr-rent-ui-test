@@ -5,7 +5,6 @@ import Home from './components/Home';
 
 import CustomerView from "./components/Customer/CustomerView";
 import PurrentView from './components/Purrent/PurrentView';
-import NewRental from './components/Customer/Transaction/NewRental';
 import Login from './components/Customer/Login';
 import NewPurchase from './components/Customer/Transaction/NewPurchase';
 import viewInvoices from './components/Customer/Transaction/viewInvoices';
@@ -23,11 +22,12 @@ import DeleteCust from './components/Purrent/CustManagement/DeleteCust';
 import ThankYou from './components/Customer/Transaction/ThankYou';
 import AddCust from './components/Purrent/CustManagement/AddCust';
 import Statistics from './components/Statistics';
+import NewRental from './components/Customer/Transaction/NewRental';
 
 
 class ui_test extends Component {
 	render() {
-		return(
+		return(	
 			<BrowserRouter>
 				<div>
 					<Route path="/" component={Home} exact />
