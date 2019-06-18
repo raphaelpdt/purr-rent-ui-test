@@ -12,7 +12,7 @@ export default class EmpPosting extends Component {
     handleDropdownChange = (e, data) => {
         this.setState({ [data.name]: data.value }, () => {
             console.log(this.state);
-            var request = new Request('http://localhost:3000/animals', {
+            var request = new Request('http://localhost:3000/animal-fliter', {
                 method: 'POST',
                 header: new Headers({ 'Content-Type': 'application/json' }),
                 body: JSON.stringify(this.state)

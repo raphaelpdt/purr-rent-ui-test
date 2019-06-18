@@ -77,8 +77,26 @@ export default class AddAnimal extends Component {
         this.setState({ [data.name]: data.value }, console.log(this.state))
 
     }
+    makeFetch(data) {
+        console.log(data);
+        var request = new Request('http://localhost:3000/add-animal', {
+            method: 'POST',
+            header: new Headers( { 'Content-Type': 'application/json'}),
+            body: JSON.stringify(data)
+        });
+        fetch(request)
+        .then(response => {
+          if (response.status === 200) {
+            return response.json();
+          } else {
+            throw new Error('Something went wrong on api server!');
+          }
+        }).catch(error => {
+            console.error(error);
+          });
+        
+    }
     render() {
-        const { value } = this.state
         return (
             <Grid>
                 <Grid.Row centered>
@@ -128,10 +146,9 @@ export default class AddAnimal extends Component {
                             <Dropdown placeholder='Select a care package' options={null} name='packageid' />
                         </Form.Field>
                         <Link to='/purrent'>
-                            <Button color='orange' onClick={this.setState(value, () => {
-                                console.log(this.state)
-                                console.log('validate all info correct and add animal to db hehe x3')
-                            })}> Submit </Button>
+                            <Button color='orange' onClick={() => {
+                                this.makeFetch(this.state)
+                            }}> Submit </Button>
                         </Link>
                     </Form>
                 </Grid.Row>
