@@ -41,7 +41,7 @@ class EmpAccount extends Component {
                                     <Item.Extra>
                                         <Label>Furry</Label>
                                         <Label color='blue'><Icon name='favorite' />Rental</Label>
-                                        <Link to='/customer-update'>
+                                        <Link to={{pathname: '/customer-update', state: this.state.empid}}>
                                             <Divider />
                                             <Button color='teal'>Update Info</Button>
                                         </Link>

@@ -4,11 +4,9 @@ import { Item, Header } from 'semantic-ui-react';
 
 export default class ViewTrans extends Component {
 
-    constructor() {
-        super()
-        this.state = {
-            transactions: []
-        }
+    state = {
+        custid: this.props.location.state,
+        transactions: [],
     }
 
     // componentDidMount() {
@@ -46,11 +44,14 @@ export default class ViewTrans extends Component {
         //             </Item>)
         //     }
         //     return items
-        }
-    
+    }
+
     render() {
         return (
-            <Header>display all transactions for dis customer</Header>
+            <div>
+                <Header>display all transactions for dis customer</Header>
+                <h1>{this.state.custid}</h1>
+            </div>
         )
     }
 }
