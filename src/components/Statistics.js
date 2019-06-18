@@ -50,7 +50,7 @@ class Statistics extends Component {
     //     // fetch all curr due dates
     //     fetch('/duedates')
     //         .then(res => res.json())
-    //         .then(duedates => this.setState({ animals: duedates.rows }))
+    //         .then(duedates => this.setState({ DueDates: duedates.rows }))
 
     //     // fetch cust w highest transactions
     //     fetch('/highest_bidder')
