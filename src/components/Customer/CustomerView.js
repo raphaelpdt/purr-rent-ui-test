@@ -41,6 +41,7 @@ class CustomerView extends Component {
 
     render() {
 
+<<<<<<< HEAD
         return (
             <Tab
                 menu={{ fluid: true, vertical: true, tabular: true }}
@@ -83,6 +84,41 @@ class CustomerView extends Component {
                     },
                 ]}
                 renderActiveOnly={false} />);
+=======
+        return(
+        <Tab 
+        menu={{fluid: true, vertical: true, tabular: true}} 
+        panes={[
+        {
+        menuItem: 'Animals',
+            pane: {
+                key: 'animals',
+                content: ( 
+                <div><Posting custid={this.state.custid}/></div>
+                ),
+            },
+        },
+        { 
+        menuItem: 'My Account', 
+            pane: {
+                key: 'account', 
+                content: (
+                <div><AccountGrid custid={this.state.custid}/></div>
+                ),
+            },
+        },
+        {
+        menuItem: 'Statistics',
+            pane: {
+                key: 'stats',
+                content: (
+                    <div><Statistics /></div>
+                ),
+            },
+        },
+        ]}
+        renderActiveOnly={false}/>);
+>>>>>>> d7f1097353ab9778f23e32532eb5ea34e20fa460
     }
 }
 export default CustomerView;

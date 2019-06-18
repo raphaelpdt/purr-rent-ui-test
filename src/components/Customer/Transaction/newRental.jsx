@@ -8,8 +8,9 @@ const payOptions = [
     { key: 'debit', value: 'debit', text: 'Debit' }
 ]
 class NewRental extends Component {
+
     state = {
-        custid: null,
+        custid: this.props.location.state,
         animalid: null,
         start: null,
         end: null,
@@ -25,7 +26,40 @@ class NewRental extends Component {
     }
     
     render() {
+        
         return (
+<<<<<<< HEAD
+        <Grid>
+            <Grid.Row centered>
+                <Header/>
+                <Form>
+                    <Form.Field>
+                        <label>CustID:</label>
+                        <input placeholder={this.state.custid} name='custid'/>
+                    </Form.Field>
+                    <Form.Field>
+                        <label>AnimalID:</label>
+                        <input type='text' ref='animalid' placeholder='AnimalID'/>
+                    </Form.Field>
+                    <Form.Field>
+                        <label htmlFor="address">Rental Term:</label>
+                        <input type='text' ref='address' placeholder='Address'/>
+                    </Form.Field>
+                    <Form.Field>
+                        <label htmlFor="pnum">Start Date:</label>
+                        <input type='number' ref='pnum' placeholder='Start Date' />
+                    </Form.Field>
+                    <Form.Field>
+                        <label htmlFor="pnum">Return Date:</label>
+                        <input type='number' ref='pnum' placeholder='Return Date' />
+                    </Form.Field>
+                    <Link to='/customer-thank-you'>
+                    <Button> Submit </Button>
+                    </Link>
+                </Form>
+            </Grid.Row>
+        </Grid>
+=======
             <Grid>
                 <Grid.Row centered>
                     <Header />
@@ -63,6 +97,7 @@ class NewRental extends Component {
                     </Form>
                 </Grid.Row>
             </Grid>
+>>>>>>> fcf515263226a056b0266b19c9b2b310d0842a24
         );
     };
 }
