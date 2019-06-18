@@ -45,8 +45,11 @@ class AccountGrid extends Component {
                                     <Divider/>
                                     <Button color='teal'>Update Info</Button>
                                 </Link>
+                                <Link to='/customer-transactions'>
+                                    <Button color='green'>View All Transactions</Button>
+                                </Link>
                                 <Link to='/customer-invoices'>
-                                    <Button color='green'>View Invoices</Button>
+                                    <Button color='blue'>View All Invoices</Button>
                                 </Link>
                             </Item.Extra>
                         </Item.Content>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Button} from 'semantic-ui-react';
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import EmpPosting from '../EmpPosting';
 
 export default class TAnimalManagement extends Component {
@@ -12,6 +12,11 @@ export default class TAnimalManagement extends Component {
                         <Link to='/new-animal'>
                             <Button color='pink'>Add New Animal</Button>
                         </Link>
+                        <NavLink to='/update-animal'>            
+                        <Button primary floated='left'>
+                        Update
+                        </Button>
+                    </NavLink>
                     </Button.Group>
                 </div>
         )
