@@ -23,7 +23,7 @@ const blidOptions = [
 
 export default class UpdateEmp extends Component {
     state = {
-        empid: null,
+        empid: this.props.location.state,
         addr: null,
         workertype: null,
         salary: null,
@@ -48,7 +48,7 @@ export default class UpdateEmp extends Component {
                             <label htmlFor='empid'>Enter a 3 Digit Employee ID:</label>
                             <input
                                 type='text'
-                                placeholder='Employee ID'
+                                placeholder={this.state.empid}
                                 name='empid'
                                 onChange={this.handleTextChange} />
                         </Form.Field>

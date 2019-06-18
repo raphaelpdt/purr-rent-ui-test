@@ -4,7 +4,11 @@ import { Link } from 'react-router-dom';
 import { Grid, Item, Button, Label, Icon, Divider, } from 'semantic-ui-react';
 
 class EmpAccount extends Component {
-    state = { empid: this.props.empid }
+    state = { 
+        empid: this.props.empid,
+        salary: 100,
+
+    }
 
     render() {
         return (
@@ -14,47 +18,14 @@ class EmpAccount extends Component {
                     <Grid.Column>
                         <EmpCard empid={this.state.empid} />
 
-                        Current Purrks: None redeemed yet
-                    <Link to='/customer-redeempurrks'>
-                            <Button size='medium'>Redeem Purrks!</Button>
+                    <Link to={{pathname: 'update-purrent', state: this.state.empid}}>
+                            <Button size='medium'>Update Info</Button>
                         </Link>
                     </Grid.Column>
 
                     <Grid.Column>
-                        <h2>Recent Transactions</h2>
-                        <Item.Group divided>
-                            <Item>
-                                <Item.Content>
-                                    <Item.Header as='a'>Daddy</Item.Header>
-                                    <Item.Description>Wants a thirsty, furry little boy uwuwuwuwuwuwuwuwu</Item.Description>
-                                    <Item.Extra>
-                                        <Label>Feathery</Label>
-                                        <Label color='olive'><Icon name='dollar sign' />Purr-chased</Label>
-                                    </Item.Extra>
-                                </Item.Content>
-                            </Item>
-
-                            <Item>
-                                <Item.Content>
-                                    <Item.Header as='a'>BDSM</Item.Header>
-                                    <Item.Description>I'm into BDSM; Beautiful Dogs Surrounding Me</Item.Description>
-                                    <Item.Extra>
-                                        <Label>Furry</Label>
-                                        <Label color='blue'><Icon name='favorite' />Rental</Label>
-                                        <Link to={{pathname: '/customer-update', state: this.state.empid}}>
-                                            <Divider />
-                                            <Button color='teal'>Update Info</Button>
-                                        </Link>
-                                        <Link to='/customer-transactions'>
-                                            <Button color='green'>View All Transactions</Button>
-                                        </Link>
-                                        <Link to='/customer-invoices'>
-                                            <Button color='blue'>View All Invoices</Button>
-                                        </Link>
-                                    </Item.Extra>
-                                </Item.Content>
-                            </Item>
-                        </Item.Group>
+                        <h2>Salary</h2>
+                        {this.state.salary}
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
