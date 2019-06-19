@@ -20,7 +20,7 @@ export default class Login extends Component {
     const res = await axios.post('/api/customers/login', data);
     this.setState({ custid: res.data })
     if (res.status === 500) {
-      alert("some thing is wrong, try again")
+      alert("some thing is wrong, try again");
     } else
       if (res.status === 200) {
         history.push('/customer', res.data)

@@ -67,7 +67,31 @@ app.post('/animals', function (req, res) {
         }
     })
 })
+app.post('/api/customers/login', function (req, res) {
+    console.log('request body: ' + req.body.custid);
+    let custid = req.body.custid
+    console.log('connection success')
+    pool.connect((err, db, done) => {
+        if (err) {
+            console.error('error fetching data\n' + err)
+            res.send(500, err)
+            // res.status(500).send()
+        }
+        else {
+            db.query(`select * from customer where custid=${custid}`, (err, table) => {
+                done();
+                if (err)
+                    return res.status(500).send(err)
+                else {
+                    // console.table(table)
+                    console.log('connection success')
+                    res.status(200).send(custid)
 
+                }
+            })
+        }
+    })
+})
 app.post('/api/customers/signup', function (req, res) {
     let custid = req.body.custid
     let name = req.body.name
@@ -92,44 +116,7 @@ app.post('/api/customers/signup', function (req, res) {
                 }
         }
     })
-
-    // console.log('value from request body: '+custid)
-    // console.log('value from request body: '+name)
-    // console.log('value from request body: '+address)
-    // console.log('value from request body: '+pnum)
-
-    // res.status(200).send()
 })
-/* hi baby */
-
-app.post('/api/customers/login', function (req, res) {
-    console.log('request body: ' + req.body.custid);
-    let custid = req.body.custid
-    console.log('connection success')
-
-    // res.status(200).send(custid)
-    pool.connect((err, db, done) => {
-        if (err) {
-            console.error('error fetching data\n' + err)
-            res.send(500, err)
-            // res.status(500).send()
-        }
-        else {
-            db.query(`select * from customer where custid=${custid}`, (err, table) => {
-                if (err)
-                    return res.send(500, err)
-                // res.status(500).send(err)
-                else {
-                    // console.table(table)
-                    console.log('connection success')
-                    res.status(200).send(custid)
-
-                }
-            })
-        }
-    })
-})
-
 // customers
 // POST CUSTOMERS
 app.post('/customers', function (req, res) {

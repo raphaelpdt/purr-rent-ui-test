@@ -50,6 +50,31 @@ class Posting extends Component {
         }
     ]
 
+    componentDidMount() {
+        fetch('/animals')
+          .then(res => {
+              if (res.status===200) {
+                  res.json()
+          .then(anims => this.setState({animals: anims.rows}))
+      } else {
+          alert('something went wrong loading animals')
+      }}) 
+    }
+    
+
+    componentDidMount() {
+        fetch('/')
+            .then(response => {
+                if (response.status === 200) {
+                    return response.json();
+                } else {
+                    throw new Error('Something went wrong on api server!');
+                }
+            }).catch(error => {
+                console.error(error);
+              });
+    }
+    
     render() {
         return (
             <div>
