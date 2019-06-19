@@ -66,12 +66,31 @@ export default class UpdateAnimal extends Component {
         clinid: null,
         packageid: null,
     }
+    
+    makeFetch(data) {
+        console.log(data);
+        var request = new Request('http://localhost:3000/update-animal', {
+            method: 'POST',
+            header: new Headers( { 'Content-Type': 'application/json'}),
+            body: JSON.stringify(data)
+        });
+        fetch(request)
+        .then(response => {
+          if (response.status === 200) {
+            return response.json();
+          } else {
+            throw new Error('Something went wrong on api server!');
+          }
+        }).catch(error => {
+            console.error(error);
+          });
+        
+    }
     handleTextChange = e => {
         this.setState({[e.target.name]: e.target.value}, console.log(this.state))      
     }
     handleDropdownChange = (e, data) => {
         this.setState({[data.name] : data.value }, console.log(this.state))
-
     }
     render() {
         const { value } = this.state
@@ -124,10 +143,9 @@ export default class UpdateAnimal extends Component {
                        <Dropdown placeholder='Select a care package' options={null} name='packageid'/>
                    </Form.Field>
                    <Link to='/purrent'>
-                   <Button color='orange' onClick={this.setState(value, () => {
-                       console.log(this.state)
-                       console.log('validate db contains animalid and then animal to db hehe x3')
-                   })}> Update </Button>
+                   <Button color='orange' onClick={() => { 
+                       this.makeFetch(this.state)
+                   }}> Update </Button>
                    </Link>
             </Form>
         </Grid.Row>

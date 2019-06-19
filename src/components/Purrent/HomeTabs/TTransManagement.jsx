@@ -15,11 +15,29 @@ export default class TTransManagement extends Component {
 
     handleDropdownChange = (e, data) => {
         this.setState({ [data.name]: data.value })
-
     }
-    
     handleTextChange = e => {
         this.setState({[e.target.name]: e.target.value}, console.log(this.state))      
+    }
+    makeFetch(data) {
+        console.log(data);
+        var request = new Request('http://localhost:3000/transactions-all', {
+            method: 'POST',
+            header: new Headers({ 'Content-Type': 'application/json' }),
+            body: JSON.stringify(data)
+        });
+        fetch(request)
+            .then(response => {
+                if (response.status === 200) {
+                    console.log(response)
+                    return response.json();
+                } else {
+                    throw new Error('Something went wrong on api server!');
+                }
+            }).catch(error => {
+                console.error(error);
+            });
+    
     }
     render() {
         return (
@@ -45,7 +63,7 @@ export default class TTransManagement extends Component {
                 </Form.Field>
                 <Button onClick={() => {
                                 console.log(this.state)
-                                console.log('search %__% input then display results')
+                                this.makeFetch(this.state)
                             }}> Search </Button>
             </Form>
                 )

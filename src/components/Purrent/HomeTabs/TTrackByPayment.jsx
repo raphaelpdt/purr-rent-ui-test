@@ -6,9 +6,9 @@ export default class TTrackByPayment extends Component {
   makeFetch(data) {
     console.log(data);
     var request = new Request('http://localhost:3000/div-payment-method', {
-        method: 'GET',
+        method: 'POST',
         header: new Headers({ 'Content-Type': 'application/json' }),
-        // body: JSON.stringify(data)
+        body: JSON.stringify(data)
     });
     fetch(request)
         .then(response => {

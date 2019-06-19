@@ -37,6 +37,30 @@ export default class AddEmp extends Component {
         this.setState({ [data.name]: data.value }, console.log(this.state))
 
     }
+    makeFetch(data) {
+        // console.log('this is from a method')
+        console.log(data);
+        var request = new Request('http://localhost:3000/api/purrents/add', {
+          method: 'POST',
+          header: new Headers({ 'Content-Type': 'application/json' }),
+          body: JSON.stringify(data)
+        });
+        fetch(request)
+          .then(response => {
+            if (response.status === 200) {
+              return response.json();
+            } else {
+              throw new Error('Something went wrong on api server!');
+            }
+          })
+          // .then(response => {
+          //   console.debug(response);
+          //   // ...
+          .catch(error => {
+            console.error(error);
+          });
+    
+      }
     render() {
         const { value } = this.state
         return (
@@ -96,10 +120,7 @@ export default class AddEmp extends Component {
                                 onChange={this.handleDropdownChange} />
                         </Form.Field>
                         <Link to='/purrent'>
-                            <Button color='green' onClick={this.setState(value, () => {
-                                console.log(this.state)
-                                console.log('validate all info correct and add employee to db hehe x3')
-                            })}> Submit </Button>
+                            <Button color='green' onClick={() => {this.makeFetch(this.state)}}> Submit </Button>
                         </Link>
                     </Form>
                 </Grid.Row>

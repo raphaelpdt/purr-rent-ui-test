@@ -5,9 +5,9 @@ export default class TSpecial extends Component {
   makeFetch(data) {
     console.log(data);
     var request = new Request('http://localhost:3000/rental-between-dates', {
-      method: 'GET',
+      method: 'POST',
       header: new Headers({ 'Content-Type': 'application/json' }),
-      // body: JSON.stringify(data) <- no body for GET
+      body: JSON.stringify(data)
     });
     fetch(request)
       .then(response => {
