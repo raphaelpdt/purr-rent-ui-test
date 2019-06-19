@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
 import { Form, Checkbox, Button, Grid, Header } from 'semantic-ui-react';
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
 import axios from 'axios';
-=======
->>>>>>> f90301a7c892297970d67504e5ba989be112cb52
 
 
 class CustSignUp extends Component {
@@ -18,7 +15,6 @@ class CustSignUp extends Component {
     this.setState({ [e.target.name]: e.target.value })
   }
 
-<<<<<<< HEAD
   makeFetch = async (data) => {
     const res = await axios.post('/api/customers/signup', data);
     }
@@ -45,32 +41,6 @@ class CustSignUp extends Component {
   //   });
 
   // }
-=======
-  makeFetch(data) {
-    // console.log('this is from a method')
-    console.log(data);
-    var request = new Request('http://localhost:3000/api/customers/add', {
-      method: 'POST',
-      header: new Headers({ 'Content-Type': 'application/json' }),
-      body: JSON.stringify(data)
-    });
-    fetch(request)
-      .then(response => {
-        if (response.status === 200) {
-          return response.json();
-        } else {
-          throw new Error('Something went wrong on api server!');
-        }
-      })
-    // .then(response => {
-    //   console.debug(response);
-    //   // ...
-    .catch(error => {
-      console.error(error);
-    });
-
-  }
->>>>>>> f90301a7c892297970d67504e5ba989be112cb52
   // saveCustomer = (event) => {
   //   event.preventDefault();
 
