@@ -1,60 +1,65 @@
-import React, {Component} from 'react';
-import {Card, Grid, Item, Image, Button, Label, Icon} from 'semantic-ui-react';
+import React, { Component } from 'react';
+import AccountCard from './AccountCard';
+import { Link } from 'react-router-dom';
+import { Grid, Item, Button, Label, Icon, Divider, } from 'semantic-ui-react';
 
-export default class AccountGrid extends Component {
+class AccountGrid extends Component {
+    state = { custid: this.props.custid }
+
     render() {
-        return(
+        return (
             <Grid columns={2} divided>
                 <Grid.Row stretched>
-                
-                <Grid.Column>
-                    <Card>
-                    <Image src='http://dcsir.org/wp-content/uploads/2017/12/Screen-Shot-2017-12-16-at-7.43.20.png' wrapped ui={false} />
-                        <Card.Content>
-                        <Card.Header>Good Boi</Card.Header>
-                        <Card.Meta>
-                            <span>Purrfect Member since 2019</span>
-                        </Card.Meta>
-                        </Card.Content>
-                        <Card.Content extra>
-                        <a>
-                            69 Points
-                        </a>
-                        </Card.Content>
-                    </Card>
 
-                    Current Purrks: None redeemed yet
-                    <Button size='medium'>Redeem Purrks!</Button>
-                </Grid.Column>
+                    <Grid.Column>
+                        <AccountCard custid={this.state.custid} />
 
-                <Grid.Column>
-                    <h2>Transactions</h2>
-                    <Item.Group relaxed>
-                    <Item>
-                    <Item.Content>
-                            <Item.Header as='a'>Daddy</Item.Header>
-                            <Item.Description>Wants a thirsty, furry little boy uwuwuwuwuwuwuwuwu</Item.Description>
-                            <Item.Extra>
-                                <Label>Feathery</Label>
-                                <Label color='olive green'><Icon name='dollar sign' />Purr-chased</Label>
-                            </Item.Extra>
-                        </Item.Content>
-                    </Item>
+                        Current Purrks: None redeemed yet
+                    <Link to='/customer-redeempurrks'>
+                            <Button size='medium'>Redeem Purrks!</Button>
+                        </Link>
+                    </Grid.Column>
 
-                    <Item>
-                    <Item.Content>
-                            <Item.Header as='a'>BDSM</Item.Header>
-                            <Item.Description>I'm into BDSM; Beautiful Dogs Surrounding Me</Item.Description>
-                            <Item.Extra>
-                                <Label>Furry</Label>
-                                <Label color='blue'><Icon name='favorite'/>Rental</Label>
-                            </Item.Extra>
-                        </Item.Content>
-                    </Item>
-                    </Item.Group>
-                </Grid.Column>
+                    <Grid.Column>
+                        <h2>Recent Transactions</h2>
+                        <Item.Group divided>
+                            <Item>
+                                <Item.Content>
+                                    <Item.Header as='a'>Daddy</Item.Header>
+                                    <Item.Description>Wants a thirsty, furry little boy uwuwuwuwuwuwuwuwu</Item.Description>
+                                    <Item.Extra>
+                                        <Label>Feathery</Label>
+                                        <Label color='olive'><Icon name='dollar sign' />Purr-chased</Label>
+                                    </Item.Extra>
+                                </Item.Content>
+                            </Item>
+
+                            <Item>
+                                <Item.Content>
+                                    <Item.Header as='a'>BDSM</Item.Header>
+                                    <Item.Description>I'm into BDSM; Beautiful Dogs Surrounding Me</Item.Description>
+                                    <Item.Extra>
+                                        <Label>Furry</Label>
+                                        <Label color='blue'><Icon name='favorite' />Rental</Label>
+                                        <Link to={{ pathname: '/customer-update', state: this.state.custid }}>
+                                            <Divider />
+                                            <Button color='teal'>Update Info</Button>
+                                        </Link>
+                                        <Link to={{ pathname: '/customer-transactions', state: this.state.custid }}>
+                                            <Button color='green'>View All Transactions</Button>
+                                        </Link>
+                                        <Link to={{ pathname: '/customer-transactions', state: this.state.custid }}>
+                                            <Button color='blue'>View All Invoices</Button>
+                                        </Link>
+                                    </Item.Extra>
+                                </Item.Content>
+                            </Item>
+                        </Item.Group>
+                    </Grid.Column>
                 </Grid.Row>
             </Grid>
         );
     }
 }
+
+export default AccountGrid;

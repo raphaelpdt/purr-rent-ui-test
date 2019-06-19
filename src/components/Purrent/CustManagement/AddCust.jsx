@@ -1,13 +1,8 @@
 import React, { Component } from 'react'
-import { Form, Checkbox, Button, Grid, Header } from 'semantic-ui-react';
+import { Form, Button, Grid, Header } from 'semantic-ui-react';
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
-import axios from 'axios';
-=======
->>>>>>> f90301a7c892297970d67504e5ba989be112cb52
 
-
-class CustSignUp extends Component {
+export default class AddCust extends Component {
   state = {
     custid: null,
     name: null,
@@ -17,35 +12,6 @@ class CustSignUp extends Component {
   handleTextChange = e => {
     this.setState({ [e.target.name]: e.target.value })
   }
-
-<<<<<<< HEAD
-  makeFetch = async (data) => {
-    const res = await axios.post('/api/customers/signup', data);
-    }
-    // console.log('this is from a method')
-  //   console.log(data);
-  //   var request = new Request('http://localhost:3000/api/customers/add', {
-  //     method: 'POST',
-  //     header: new Headers({ 'Content-Type': 'application/json' }),
-  //     body: JSON.stringify(data)
-  //   });
-  //   fetch(request)
-  //     .then(response => {
-  //       if (response.status === 200) {
-  //         return response.json();
-  //       } else {
-  //         throw new Error('Something went wrong on api server!');
-  //       }
-  //     })
-  //   // .then(response => {
-  //   //   console.debug(response);
-  //   //   // ...
-  //   .catch(error => {
-  //     console.error(error);
-  //   });
-
-  // }
-=======
   makeFetch(data) {
     // console.log('this is from a method')
     console.log(data);
@@ -62,16 +28,15 @@ class CustSignUp extends Component {
           throw new Error('Something went wrong on api server!');
         }
       })
-    // .then(response => {
-    //   console.debug(response);
-    //   // ...
-    .catch(error => {
-      console.error(error);
-    });
+      // .then(response => {
+      //   console.debug(response);
+      //   // ...
+      .catch(error => {
+        console.error(error);
+      });
 
   }
->>>>>>> f90301a7c892297970d67504e5ba989be112cb52
-  // saveCustomer = (event) => {
+  // updateCustomer = (event) => {
   //   event.preventDefault();
 
   //   let data = {
@@ -85,7 +50,7 @@ class CustSignUp extends Component {
   // Send req to server
   // var request = new Request('http://localhost:3000/api/new-customer', {
   //   method: 'POST',
-  //   header: new Headers( { 'Content-Type': 'application/kson'}),
+  //   header: new Headers( { 'Content-Type': 'application/json'}),
   //   body: JSON.stringify(data);
   // });
 
@@ -107,39 +72,30 @@ class CustSignUp extends Component {
           <Form>
             <Form.Field>
               <label htmlFor="custid">Enter a 3 Digit Number CustID:</label>
-              <input type='text' name='custid' placeholder='CustID' onChange={this.handleTextChange} />
+              <input type='number' name='custid' placeholder='CustID' />
             </Form.Field>
             <Form.Field>
               <label htmlFor="name">Name:</label>
-              <input type='text' name='name' placeholder='Name' onChange={this.handleTextChange} />
+              <input type='text' name='name' placeholder='Name' />
             </Form.Field>
             <Form.Field>
               <label htmlFor="address">Address:</label>
-              <input type='text' name='address' placeholder='Address' onChange={this.handleTextChange} />
+              <input type='text' name='address' placeholder='Address' />
             </Form.Field>
             <Form.Field>
               <label htmlFor="pnum">Phone Number:</label>
-              <input type='text' name='pnum' placeholder='Phone Number' onChange={this.handleTextChange} />
+              <input type='number' name='pnum' placeholder='Phone Number' />
             </Form.Field>
-            <Form.Field>
-              <Checkbox label='I agree to the Terms and Conditions, like do I even ohmagaaaawd' />
-            </Form.Field>
-            <Link to='/customer-login'>
+            <Link to='/purrent'>
               <Button onClick={() => {
                 console.log('validate customer table dont contain custid and then add')
                 this.makeFetch(this.state);
-              }
-              }> Submit </Button>
+              }}>
+                Add Customer </Button>
             </Link>
-            {/* <Form success>
-        <Message success header='Form Completed' content="You're all signed up!" />
-        
-      </Form> */}
           </Form>
         </Grid.Row>
       </Grid>
     );
   };
 }
-
-export default CustSignUp;
